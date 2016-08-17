@@ -2,7 +2,7 @@
 /**
  * The template for displaying all single posts.
  *
- * @package Yard startertheme
+ * @package dutchdodo startertheme
  */
 
 get_header(); ?>

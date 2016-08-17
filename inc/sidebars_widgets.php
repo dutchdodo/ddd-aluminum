@@ -4,11 +4,11 @@
  * @link http://codex.wordpress.org/Function_Reference/register_sidebar
  */
 
-function ys_action_register_sidebars() {
+function ddd_action_register_sidebars() {
 
     $sidebars_properties = array (
        array(
-           'name' => __( 'Sidebar 1', 'yard-startertheme' ),
+           'name' => __( 'Sidebar 1', 'dutchdodo-startertheme' ),
            'id'            => '1',
            'description'   => '',
            'class'         => '',
@@ -33,13 +33,13 @@ function ys_action_register_sidebars() {
         );
     }
 }
-add_action('widgets_init', 'ys_action_register_sidebars');
+add_action('widgets_init', 'ddd_action_register_sidebars');
 
 /**
  * Unregister defaults widgets
  */
 
-function ys_action_unregister_default_widgets() {
+function ddd_action_unregister_default_widgets() {
 
 	global $wp_widget_factory;
 	remove_action('wp_head', array($wp_widget_factory->widgets['WP_Widget_Recent_Comments'], 'recent_comments_style'));
@@ -58,4 +58,4 @@ function ys_action_unregister_default_widgets() {
 	unregister_widget('WP_Widget_Text');
 	unregister_widget('WP_Nav_Menu_Widget');
 }
-add_action('widgets_init', 'ys_action_unregister_default_widgets');
+add_action('widgets_init', 'ddd_action_unregister_default_widgets');

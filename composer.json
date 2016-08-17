@@ -1,9 +1,9 @@
 {
-	"name": "yard/startertheme",
+	"name": "dutchdodo/startertheme",
 	"authors": [
 		{
 			"name": "Edwin Siebel",
-			"email": "edwin@yard.nl"
+			"email": "edwin@dutchdodo.nl"
 		}
 	],
 	"require": {

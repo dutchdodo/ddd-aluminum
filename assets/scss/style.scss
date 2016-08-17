@@ -1,5 +1,5 @@
 /*--------------------------------------------------------------
->>> TABLE OF CONTENTS:
+ TABLE OF CONTENTS:
 ----------------------------------------------------------------
 1.0 Utils
   2.1 Placeholders
@@ -37,30 +37,7 @@
 /*--------------------------------------------------------------
 2.0 Vendor, libraries and frameworks
 --------------------------------------------------------------*/
-//@import "../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap";
-
-$bowerpath : "../../bower_components/bootstrap-sass-official/assets/stylesheets/";
-
-
-// Core variables and mixins
-@import "#{$bowerpath}bootstrap/variables";
-
-//@import "../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/variables";
-//@import "bootstrap/mixins";
-
-// Reset and dependencies
-//@import "bootstrap/normalize";
-//@import "bootstrap/print";
-//@import "bootstrap/glyphicons";
-
-// Core CSS
-//@import "bootstrap/scaffolding";
-//@import "bootstrap/type";
-//@import "bootstrap/code";
-//@import "bootstrap/grid";
-//@import "bootstrap/tables";
-//@import "bootstrap/forms";
-//@import "bootstrap/buttons";
+@import "../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap";
 
 /*--------------------------------------------------------------
 3.0 Base, boilerplate

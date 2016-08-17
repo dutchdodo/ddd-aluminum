@@ -7,7 +7,7 @@
  *
  * .noConflict()
  * The routing is enclosed within an anonymous function so that you can
- * always reference jQuery with $, even when in .noConflict() mode.
+ * alwaDDD reference jQuery with $, even when in .noConflict() mode.
  * ======================================================================== */
 
 (function($) {
@@ -15,7 +15,7 @@
 
     // Use this variable to set up the common and page specific functions. If you
     // rename this variable, you will also need to rename the namespace below.
-    var YS = {
+    var DDD = {
         // All pages
         'common': {
             init: function() {
@@ -35,7 +35,7 @@
     var UTIL = {
         fire: function(func, funcname, args) {
             var fire;
-            var namespace = YS;
+            var namespace = DDD;
             funcname = (funcname === undefined) ? 'init' : funcname;
             fire = func !== '';
             fire = fire && namespace[func];

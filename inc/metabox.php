@@ -4,7 +4,7 @@
  * Plugin: https://wordpress.org/plugins/meta-box/
  */
 
-function ys_action_register_metaboxes () {
+function ddd_action_register_metaboxes () {
 
 	/********************* META BOXES DEFINITION ***********************/
 
@@ -51,14 +51,14 @@ function ys_action_register_metaboxes () {
 		}
 	}
 }
-add_action('admin_init', 'ys_action_register_metaboxes');
+add_action('admin_init', 'ddd_action_register_metaboxes');
 
 /**
  * Check if meta boxes is included
  *
  * @return bool
  */
-function ys_metabox_maybe_include($conditions) {
+function ddd_metabox_maybe_include($conditions) {
     // Include in back-end only
     if (!defined('WP_ADMIN') || !WP_ADMIN) {
         return false;

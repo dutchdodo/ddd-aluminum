@@ -1,6 +1,6 @@
 <nav class="paradeiser">
     <a href="#">
-        <img src="https://pbs.twimg.com/profile_images/558650195/logo_yard_400x400.jpg" alt="" class="paradeiser_logo">
+        <img src="https://pbs.twimg.com/profile_images/558650195/logo_dutchdodo_400x400.jpg" alt="" class="paradeiser_logo">
     </a>
     <a href="#">
         <span class="glyphicon glyphicon-home"></span>

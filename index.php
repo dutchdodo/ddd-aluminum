@@ -8,7 +8,7 @@
  * E.g., it puts together the home page when no home.php file exists.
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package Yard startertheme
+ * @package dutchdodo startertheme
  */
 
 get_header(); ?>

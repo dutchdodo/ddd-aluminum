@@ -1,3 +1,7 @@
+/*--------------------------------------------------------------
+  Mixins
+--------------------------------------------------------------*/
+
 // Mixin handling for media queries
 @mixin breakpoint($point) {
   @if $point == desktop {

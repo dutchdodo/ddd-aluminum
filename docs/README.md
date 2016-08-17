@@ -1,4 +1,4 @@
-# Yardstartertheme
+# dutchdodostartertheme
 A modern startertheme build with Grunt and Bower.
 This setup is tested on Node 5.0 and 3.3.6
 

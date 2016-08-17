@@ -1,6 +1,6 @@
 <?php
 /**
- * @package Yard startertheme
+ * @package dutchdodo startertheme
  */
 ?>
 
@@ -13,7 +13,7 @@
 		<?php the_content(); ?>
 		<?php
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'yard-startertheme' ),
+				'before' => '<div class="page-links">' . __( 'Pages:', 'dutchdodo-startertheme' ),
 				'after'  => '</div>',
 			) );
 		?>

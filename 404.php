@@ -2,7 +2,7 @@
 /**
  * The template for displaying 404 pages (not found).
  *
- * @package Yard startertheme
+ * @package dutchdodo startertheme
  */
 
 get_header(); ?>
@@ -13,12 +13,12 @@ get_header(); ?>
 
 				<section class="error-404 not-found">
 					<header class="page-header">
-						<h1 class="page-title"><?php _e( 'Oops! Pagina niet gevonden.', 'yard-startertheme' ); ?></h1>
+						<h1 class="page-title"><?php _e( 'Oops! Pagina niet gevonden.', 'dutchdodo-startertheme' ); ?></h1>
 					</header><!-- .page-header -->
 
 					<div class="page-content">
 						<div class="error-404--text">404</div>
-						<p><?php _e( 'Helaas is er niets gevonden op deze locatie. Probeer anders de zoekfunctie?', 'yard-startertheme' ); ?></p>
+						<p><?php _e( 'Helaas is er niets gevonden op deze locatie. Probeer anders de zoekfunctie?', 'dutchdodo-startertheme' ); ?></p>
 						<?php get_search_form(); ?>
 					</div><!-- .page-content -->
 				</section><!-- .error-404 -->
