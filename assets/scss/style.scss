@@ -1,0 +1,93 @@
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+1.0 Utils
+  2.1 Placeholders
+  2.2 Mixins
+  2.3 Variables
+  2.4 Placeholders
+2.0 Vendors
+  2.1 Bootstrap
+3.0 Base
+  3.1 Base
+  3.2 WP Classes
+  3.3 Typography
+4.0 Layout
+  4.1 Forms
+  4.2 Header
+  4.3 Navigation
+  4.4 Sidebar
+5.0 Components
+  5.1 Breadcrumb
+  5.2 Buttons
+6.0 Pages
+  6.1 Home
+  6.2 Contact
+  6.4 404
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+1.0 Utils
+--------------------------------------------------------------*/
+@import "utils/variables";
+@import "utils/mixins";
+@import "utils/helpers";
+@import "utils/placeholders";
+
+/*--------------------------------------------------------------
+2.0 Vendor, libraries and frameworks
+--------------------------------------------------------------*/
+//@import "../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap";
+
+$bowerpath : "../../bower_components/bootstrap-sass-official/assets/stylesheets/";
+
+
+// Core variables and mixins
+@import "#{$bowerpath}bootstrap/variables";
+
+//@import "../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/variables";
+//@import "bootstrap/mixins";
+
+// Reset and dependencies
+//@import "bootstrap/normalize";
+//@import "bootstrap/print";
+//@import "bootstrap/glyphicons";
+
+// Core CSS
+//@import "bootstrap/scaffolding";
+//@import "bootstrap/type";
+//@import "bootstrap/code";
+//@import "bootstrap/grid";
+//@import "bootstrap/tables";
+//@import "bootstrap/forms";
+//@import "bootstrap/buttons";
+
+/*--------------------------------------------------------------
+3.0 Base, boilerplate
+--------------------------------------------------------------*/
+//@import "base/base"; // Using Bootstrap reset
+@import "base/wp-classes";
+//@import "base/typography";
+
+/*--------------------------------------------------------------
+4.0 Layout, main parts of our website
+--------------------------------------------------------------*/
+@import "layout/forms";
+@import "layout/header";
+@import "layout/navigation";
+@import "layout/content";
+@import "layout/sidebar";
+@import "layout/footer";
+
+/*--------------------------------------------------------------
+5.0 Components, small widgets or micro elements
+--------------------------------------------------------------*/
+@import "components/breadcrumbs";
+//@import "components/buttons"; Using Bootstrap buttons 
+
+/*--------------------------------------------------------------
+6.0 Pages, specific styling for a single page
+--------------------------------------------------------------*/
+@import "pages/home";
+@import "pages/contact";
+@import "pages/404";

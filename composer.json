@@ -1,0 +1,16 @@
+{
+	"name": "yard/startertheme",
+	"authors": [
+		{
+			"name": "Edwin Siebel",
+			"email": "edwin@yard.nl"
+		}
+	],
+	"require": {
+		"johnbillion/extended-cpts": "^3.0",
+		"johnbillion/extended-taxos": "^2.0"
+	},
+	"autoload": {
+		"files": ["vendor/johnbillion/extended-cpts/extended-cpts.php", "vendor/johnbillion/extended-taxos/extended-taxos.php"]
+	}
+}

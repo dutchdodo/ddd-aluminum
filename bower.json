@@ -1,0 +1,11 @@
+{
+  "name": "dutchdodo-startertheme",
+  "version": "1.0.0",
+  "authors": [
+    "Marcel Spaan <dutchdodo@gmail.com>"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap-sass-official": "~3.3.5"
+  }
+}

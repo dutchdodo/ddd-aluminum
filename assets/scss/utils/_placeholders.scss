@@ -1,0 +1,10 @@
+%remove-button-style {
+  border:none;
+  box-shadow:none;
+  background:none;
+
+  &:hover {
+    box-shadow:none;
+    background:none;
+  }
+}
