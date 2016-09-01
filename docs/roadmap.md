@@ -29,5 +29,5 @@ Components
 - Fontscaling control with em
 - Fontscaling with mediaquery
 - Inverted control with class
-- Traling white with em 
-- Traling white with mediaquery
+- Trailing white with em 
+- Trailing white with mediaquery
