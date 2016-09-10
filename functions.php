@@ -70,7 +70,7 @@ function ddd_scripts() {
 	wp_deregister_script('jquery');
 	wp_register_script( $handle = 'jquery', $src = '/wp-includes/js/jquery/jquery.js', $deps = array(), $ver = '1.11.2', $in_footer = true );
 
-	wp_enqueue_style( $handle = 'dutchdodo-startertheme-style', $src = get_stylesheet_directory_uri() . '/assets/css/style.min.css', $deps = array(), $ver = '1.0' );
+	wp_enqueue_style( $handle = 'dutchdodo-startertheme-style', $src = get_stylesheet_directory_uri() . '/dist/css/style.css', $deps = array(), $ver = '1.0' );
 	wp_enqueue_script( $handle = 'dutchdodo-startertheme-main', $src = get_stylesheet_directory_uri() . '/assets/js/combined.min.js', $deps = array( 'jquery' ), $version = '1.0', $in_footer = true );
 }
 add_action( 'wp_enqueue_scripts', 'ddd_scripts' );
