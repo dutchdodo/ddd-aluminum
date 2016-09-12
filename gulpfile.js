@@ -3,7 +3,7 @@ var gulp        = require('gulp');
 // Project plugins
 var sass         = require('gulp-sass'); // CSS compiling
 //var minifyCss    = require('gulp-minify-css');
-var cleanCss     = require('gulp-clean-css') // CSS minify and cleanup comments
+var cleanCSS     = require('gulp-clean-css') // CSS minify and cleanup comments
 var autoprefixer = require('gulp-autoprefixer'); // CSS prefix
 var uncss        = require('gulp-uncss'); // CSS Stripping unused selectors
 var sourcemaps   = require('gulp-sourcemaps'); // CSS Sourcemaps
@@ -59,17 +59,10 @@ gulp.task('compile-styles', function () {
         browsers: ['last 2 versions'],
         cascade: false
     }))
-    //.pipe(sourcemaps.write('.'))
+    .pipe(cleanCSS())
     .pipe(gulp.dest(distPath + '/css'))
   );
 });
-
-gulp.task('optimize-styles', function () {
-  return gulp.src(distPath + '/css/style.css')
-    .pipe(minifyCss())
-    .pipe(gulp.dest(distPath + '/css'));
-});
-
 
 
 // Scripts
@@ -82,16 +75,10 @@ gulp.task('compile-scripts', function () {
       //assetPath + '/js/somename.js'
     ])
     .pipe(concat('script.js'))
+    .pipe(uglify())
     .pipe(gulp.dest(distPath + '/js'))
   );
 });
-
-gulp.task('optimize-scripts', function () {
-  return gulp.src(distPath + '/js/script.js')
-    .pipe(uglify())
-    .pipe(gulp.dest(distPath + '/js/'));
-});
-
 
 
 // Images
@@ -99,19 +86,13 @@ gulp.task('optimize-scripts', function () {
 
 gulp.task('compile-images', function () {
   return gulp.src(assetPath + '/images/**/*')
+     .pipe(imagemin({
+        progressive: true,
+        svgoPlugins: [{removeViewBox: false}],
+        use: [pngquant()]
+      }))
     .pipe(gulp.dest(distPath + '/images'));
 });
-
-gulp.task('optimize-images', function () {
-  return gulp.src(distPath + '/images/**/*')
-    .pipe(imagemin({
-      progressive: true,
-      svgoPlugins: [{removeViewBox: false}],
-      use: [pngquant()]
-    }))
-    .pipe(gulp.dest(distPath + '/images'));
-});
-
 
 
 // Fonts
@@ -167,30 +148,4 @@ gulp.task('replace-versioned-assets-in-templates', function () {
     ])
     .pipe(collect({ replaceReved: true, dirReplacements: dirReplacements }))
     .pipe(gulp.dest(themePath));
-});
-
-
-
-// S3
-// --
-
-gulp.task('gzip-assets', function () {
-  return gulp.src([
-      '!' + distPath + '/**/*.gz',
-      distPath + '/**/*'
-    ])
-    .pipe(awspublish.gzip({ ext: '.gz' }))
-    .pipe(gulp.dest(distPath));
-});
-
-gulp.task('publish-to-s3', function () {
-  var publisher = awspublish.create(config.aws);
-  var headers = {
-    'Cache-Control': 'max-age=31536000, no-transform, public'
-  };
-
-  return gulp.src(distPath + '/**')
-    .pipe(publisher.publish(headers))
-    .pipe(publisher.sync())
-    .pipe(awspublish.reporter());
 });

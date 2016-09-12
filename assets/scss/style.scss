@@ -37,13 +37,14 @@
 /*--------------------------------------------------------------
 2.0 Vendor, libraries and frameworks
 --------------------------------------------------------------*/
-//@import "../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap";
+@import "../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap";
 
 /*--------------------------------------------------------------
 3.0 Base, boilerplate
 --------------------------------------------------------------*/
 //@import "base/base"; // Using Bootstrap reset
 @import "base/wp-classes";
+@import "base/_accessibility";
 //@import "base/typography";
 
 /*--------------------------------------------------------------
