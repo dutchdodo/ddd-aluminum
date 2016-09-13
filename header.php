@@ -30,7 +30,7 @@
 			<section>
 			<h2 class="screen-reader-text">Jump</h2>
 				<ul class="screen-reader-text">
-					<li><a href="#site-content" class="screen-reader-text">to the content</a></li>
+					<li><a href="#main" class="screen-reader-text">to the content</a></li>
 				</ul>
 			</section>
 			<nav id="site-navigation" class="main-navigation" role="navigation">
@@ -45,5 +45,3 @@
 		</header><!-- #masthead -->
 
 	</div><!-- /container -->
-
-	<div id="content" class="site-content">
