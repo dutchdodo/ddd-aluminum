@@ -16,10 +16,10 @@ var replace      = require('gulp-replace-task'); // versioning, replace text pat
 var collect      = require('gulp-rev-collector'); // versioning, replace links in html
 
 var imagemin     = require('gulp-imagemin'); // imageOpt, Minify PNG, JPEG, GIF and SVG images
-var pngquant     = require('imagemin-pngquant'); // imageOpt
+var pngquant     = require('imagemin-pngquant'); // imageOpt,
 //var imageOpt    = require('gulp-image-optimization'); // Img smaller images
 
-var browserSync  = require('browser-sync').create(); // Dev browser reload
+var browserSync  = require('browser-sync').create(); // dev browser reload
 
 
 // Configuration
@@ -35,7 +35,8 @@ gulp.task(
     'compile-scripts',
     'compile-fonts',
     'compile-images',
-    'compile-templates'
+    'compile-templates',
+    'browser-sync'
   ],
   function() {
     gulp.watch(assetPath + '/scss/**/*.scss',  ['compile-styles']);
@@ -54,13 +55,16 @@ gulp.task('compile-styles', function () {
     gulp.src([
       assetPath + '/scss/style.scss'
     ])
+    .pipe(sourcemaps.init())
     .pipe(sass().on('error', sass.logError))
     .pipe(autoprefixer({
         browsers: ['last 2 versions'],
         cascade: false
     }))
     .pipe(cleanCSS())
+    .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(distPath + '/css'))
+    .pipe(browserSync.stream())
   );
 });
 
@@ -77,6 +81,7 @@ gulp.task('compile-scripts', function () {
     .pipe(concat('script.js'))
     .pipe(uglify())
     .pipe(gulp.dest(distPath + '/js'))
+    .pipe(browserSync.stream())
   );
 });
 
@@ -148,4 +153,13 @@ gulp.task('replace-versioned-assets-in-templates', function () {
     ])
     .pipe(collect({ replaceReved: true, dirReplacements: dirReplacements }))
     .pipe(gulp.dest(themePath));
+});
+
+// Live reload
+// -----------
+
+gulp.task('browser-sync', function() {
+    browserSync.init({
+        proxy: "ddd.marcel.dev"
+    });
 });
