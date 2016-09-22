@@ -37,7 +37,7 @@
 /*--------------------------------------------------------------
 2.0 Vendor, libraries and frameworks
 --------------------------------------------------------------*/
-@import "../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap";
+@import "../../bower_components/bootstrap/scss/bootstrap";
 
 /*--------------------------------------------------------------
 3.0 Base, boilerplate
@@ -50,11 +50,10 @@
 /*--------------------------------------------------------------
 4.0 Layout, main parts of our website
 --------------------------------------------------------------*/
+@import "layout/page";
 @import "layout/forms";
 @import "layout/header";
-@import "layout/navigation";
 @import "layout/content";
-@import "layout/sidebar";
 @import "layout/footer";
 
 /*--------------------------------------------------------------

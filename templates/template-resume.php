@@ -1,5 +1,5 @@
 <?php
-/* Template Name: Home Template */
+/* Template Name: Resume */
 
 get_header(); ?>
 	<div class="site-main-wrapper">

@@ -2,4 +2,56 @@
   Define your own variables here or override the bootstrap defaults
 --------------------------------------------------------------*/
 
+ // Own Variables
+ /*----------------*/
 
+$page-margin-right : 8rem;
+
+$page-margin-top: 2em;
+$page-margin-bottom: 3em;
+
+$max-text-width: 38rem;
+$max-text-width-with-sidebar: 34rem;
+$sidebar-width: 14rem;
+
+$footer-padding-top: 2em;
+$footer-padding-bottom: 2em;
+
+ // BS Variables
+ /*----------------*/
+
+ $font-size-root:        16px;
+
+ $headings-font-family:  'Open Sans';
+
+// Grid breakpoints
+//
+// Define the minimum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 544px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+);
+
+// Grid containers
+//
+// Define the maximum width of `.container` for different screen sizes.
+
+$container-max-widths: (
+  sm: 576px,
+  md: 760px,
+  lg: 940px,
+  xl: 1150px
+);
+
+
+// Grid columns
+//
+// Set the number of columns and specify the width of the gutters.
+
+$grid-columns:      12 !default;
+$grid-gutter-width: 30px !default;

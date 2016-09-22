@@ -70,8 +70,11 @@ function ddd_scripts() {
 	wp_deregister_script('jquery');
 	wp_register_script( $handle = 'jquery', $src = '/wp-includes/js/jquery/jquery.js', $deps = array(), $ver = '1.11.2', $in_footer = true );
 
+	wp_register_style( 'googlefont-open-sans', 'https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800,600', array(), false, 'all' );
+	wp_enqueue_style( 'googlefont-open-sans' );
+
 	wp_enqueue_style( $handle = 'dutchdodo-startertheme-style', $src = get_stylesheet_directory_uri() . '/dist/css/style.css', $deps = array(), $ver = '1.0' );
-	wp_enqueue_script( $handle = 'dutchdodo-startertheme-main', $src = get_stylesheet_directory_uri() . '/assets/js/combined.min.js', $deps = array( 'jquery' ), $version = '1.0', $in_footer = true );
+	wp_enqueue_script( $handle = 'dutchdodo-startertheme-script', $src = get_stylesheet_directory_uri() . '/dist/js/script.js', $deps = array( 'jquery' ), $version = '1.0', $in_footer = true );
 }
 add_action( 'wp_enqueue_scripts', 'ddd_scripts' );
 
@@ -89,6 +92,7 @@ $optional_child_templates = array(
 	'inc/sidebars_widgets.php', 	//Custom functions for registering sidebars, deregistering defaults WP widgets and related stuff
 	'inc/metabox.php', 				//Add functions for metaboxes
 	'inc/utils.php', 				//Utils functions
+	'inc/bs4navwalker.php',			// Register Custom Navigation Walker
 );
 
 foreach ( $optional_child_templates as $optional_child_template ) {

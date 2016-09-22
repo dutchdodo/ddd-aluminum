@@ -115,4 +115,3 @@ if ( ! function_exists( 'ddd_write_log' ) ) {
 		}
 	}
 }
-

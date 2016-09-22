@@ -1,0 +1,127 @@
+/*--------------------------------------------------------------
+  Page
+--------------------------------------------------------------*/
+/* Preparing for sticky footer, or fullscreen stuff  */
+html,
+body {
+    height: 100%;
+    //background-color: #e6e6e6;
+}
+
+/*
+    Setting the margin for the bottom and top of the-page
+*/
+.the-page {
+    position: relative;
+    min-height: 94%;
+    //box-shadow: 0px 0px 20px 0px rgba(0,0,0,.15);
+    background-color: white;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: $page-margin-top;
+    padding-bottom: $page-margin-bottom;
+    padding-left: 2.4rem;
+    padding-right: 2.4rem;
+}
+/*
+
+ Controlling the margin in the page when there are no extra content columns
+
+ Single column
+
+ - margin-left is set to a fixed width.
+ - the single column is set to float with a max-width
+ - the margin-right is fixed width for just the minimum amount since the max-width will control
+ - the single colum is not auto-centered
+
+*/
+
+// HEADER
+
+.site-header{
+    position: relative;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+.page-template-template-home {
+    .site-header {
+        margin-top: 0;
+    }
+    .site-branding{
+        bottom: auto;
+    }
+}
+.site-branding {
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    @include media-breakpoint-up(md) {}
+    @include media-breakpoint-up(lg) {}
+    @include media-breakpoint-up(xl) {}
+}
+.site-description{
+    max-width: $max-text-width;
+    margin-bottom: 2em;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+    color: gray;
+    font-size: 1.1em;
+    @include media-breakpoint-up(md) {}
+    @include media-breakpoint-up(lg) {}
+    @include media-breakpoint-up(xl) {}
+}
+
+.main-navigation {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    clear: left;
+    max-width: $max-text-width;
+    border-bottom: 1px solid gray;
+    @include media-breakpoint-up(md) {}
+    @include media-breakpoint-up(lg) {}
+    @include media-breakpoint-up(xl) {}
+}
+
+// CONTENT
+
+// For positioning the sidebar on the same hight as the content
+.site-main-wrapper{
+    position: relative;
+    max-width: $max-text-width; // When there is a sidebar use less max-width
+    margin-left: auto;
+    margin-right: auto;
+    @include media-breakpoint-up(sm) {}
+    @include media-breakpoint-up(md) {}
+    @include media-breakpoint-up(lg) {}
+    @include media-breakpoint-up(xl) {}
+}
+// Always auto center
+.site-main {
+    position: relative;
+}
+
+.sidebar {
+    font-size: 0.9em;
+    display: none;
+    position: absolute;
+    width: 14rem;
+    right: -16rem;
+    margin-left: 3%;
+    top: 0;
+    @include media-breakpoint-up(lg) {
+        display: block;
+    }
+}
+
+// FOOTER
+
+.site-info {
+    max-width: $max-text-width;
+    margin-left: auto;
+    margin-right: auto;
+    $footer-padding-top: 2em;
+    $footer-padding-bottom: 2em;
+}

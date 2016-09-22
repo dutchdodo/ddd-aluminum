@@ -6,9 +6,8 @@
  */
 
 get_header(); ?>
-
-	<div class="container">
-		<main id="main" class="site-main" role="main">
+	<div class="site-main-wrapper">
+		<main class="site-main">
 
 		<?php while ( have_posts() ) : the_post(); ?>
 
@@ -17,7 +16,6 @@ get_header(); ?>
 		<?php endwhile; // end of the loop. ?>
 
 		</main><!-- #main -->
-	</div><!-- /container -->
+	</div>
 
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>

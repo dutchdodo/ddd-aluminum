@@ -11,18 +11,22 @@
  */
 
 get_header(); ?>
-
-	<div class="container">
-		<main id="main" class="site-main" role="main">
+	<div class="site-main-wrapper has-a-sidebar">
+		<main class="site-main">
 
 			<?php while ( have_posts() ) : the_post(); ?>
 
 				<?php get_template_part( 'template-parts/content', 'page' ); ?>
 
 			<?php endwhile; // end of the loop. ?>
-
 		</main><!-- #main -->
-	</div><!-- /container -->
-
-<?php get_sidebar(); ?>
+		<sidebar class="sidebar">
+			is is an example page.
+			It’s different from a blog post because
+			it will stay in one place and will show
+			up in your site navigation (in most themes).
+			Most people start with an About page that
+			introduces them to potential site
+		</sidebar>
+	</div>
 <?php get_footer(); ?>

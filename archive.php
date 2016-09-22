@@ -8,35 +8,34 @@
  */
 
 get_header(); ?>
-	<div class="container">
-		<main id="main" class="site-main" role="main">
 
-		<?php if ( have_posts() ) : ?>
+	<main class="site-main container">
 
-			<header class="page-header">
-				<?php
-					the_archive_title( '<h2 class="page-title">', '</h2>' );
-					the_archive_description( '<div class="taxonomy-description">', '</div>' );
-				?>
-			</header><!-- .page-header -->
+	<?php if ( have_posts() ) : ?>
 
-			<?php while ( have_posts() ) : the_post(); ?>
+		<header class="page-header">
+			<?php
+				the_archive_title( '<h2 class="page-title">', '</h2>' );
+				the_archive_description( '<div class="taxonomy-description">', '</div>' );
+			?>
+		</header><!-- .page-header -->
 
-				<?php get_template_part( 'template-parts/content', get_post_format() ); ?>
+		<?php while ( have_posts() ) : the_post(); ?>
 
-			<?php endwhile; ?>
+			<?php get_template_part( 'template-parts/content', get_post_format() ); ?>
 
-			<?php the_posts_navigation(); ?>
+		<?php endwhile; ?>
 
-		<?php else : ?>
+		<?php the_posts_navigation(); ?>
 
-			<?php get_template_part( 'template-parts/content', 'none' ); ?>
+	<?php else : ?>
 
-		<?php endif; ?>
+		<?php get_template_part( 'template-parts/content', 'none' ); ?>
 
-		</main><!-- #main -->
+	<?php endif; ?>
 
-		<?php get_sidebar(); ?>
-	</div><!-- /container -->
+	</main><!-- #main -->
+
+	<?php //get_sidebar(); ?>
 
 <?php get_footer(); ?>
