@@ -73,8 +73,17 @@ function ddd_scripts() {
 	wp_register_style( 'googlefont-open-sans', 'https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800,600', array(), false, 'all' );
 	wp_enqueue_style( 'googlefont-open-sans' );
 
+	//wp_register_style( 'googlefont-pt-sans', 'https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i', array(), false, 'all' );
+	//wp_enqueue_style( 'googlefont-pt-sans' );
+
+	//wp_register_style( 'googlefont-source-sans-pro', 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600', array(), false, 'all' );
+	//wp_enqueue_style( 'googlefont-source-sans-pro' );
+
+	//wp_register_style( 'googlefont-cabin', 'https://fonts.googleapis.com/css?family=Cabin:400,400i,500', array(), false, 'all' );
+	//wp_enqueue_style( 'googlefont-cabin' );
+
 	wp_enqueue_style( $handle = 'dutchdodo-startertheme-style', $src = get_stylesheet_directory_uri() . '/dist/css/style.css', $deps = array(), $ver = '1.0' );
-	wp_enqueue_script( $handle = 'dutchdodo-startertheme-script', $src = get_stylesheet_directory_uri() . '/dist/js/script.js', $deps = array( 'jquery' ), $version = '1.0', $in_footer = true );
+	wp_enqueue_script( $handle = 'dutchdodo-startertheme-script', $src = get_stylesheet_directory_uri() . '/dist/js/script.js', $deps = array( 'jquery' ), $version = '1.0', $in_footer = false );
 }
 add_action( 'wp_enqueue_scripts', 'ddd_scripts' );
 

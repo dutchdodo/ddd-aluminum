@@ -1,88 +1,159 @@
 /*--------------------------------------------------------------
   Page
 --------------------------------------------------------------*/
-/* Preparing for sticky footer, or fullscreen stuff  */
+
+/*
+     Centering the page and setting margins between elelents
+*/
+html{
+    //@extend %show-breakpoints;
+}
+// Preparing for sticky footer, or fullscreen stuff  */
 html,
 body {
     height: 100%;
-    //background-color: #e6e6e6;
 }
 
-/*
-    Setting the margin for the bottom and top of the-page
-*/
+// Setting the margin for the bottom and top of the-page
 .the-page {
     position: relative;
     min-height: 94%;
-    //box-shadow: 0px 0px 20px 0px rgba(0,0,0,.15);
-    background-color: white;
-    max-width: 1000px;
+    max-width: $page-max-width;
     margin-left: auto;
     margin-right: auto;
-    padding-top: $page-margin-top;
-    padding-bottom: $page-margin-bottom;
-    padding-left: 2.4rem;
+    // padding-top: 130px;
     padding-right: 2.4rem;
+    padding-bottom: $page-padding-bottom;
+    padding-left: 2.4rem;
+    //-
+    box-shadow: 0px 0px 20px 0px rgba(0,0,0,.15);
+    background-color: white;
+    @include media-breakpoint-up(sm) {
+        padding-right: 5rem;
+        padding-left: 5rem;
+    }
 }
-/*
-
- Controlling the margin in the page when there are no extra content columns
-
- Single column
-
- - margin-left is set to a fixed width.
- - the single column is set to float with a max-width
- - the margin-right is fixed width for just the minimum amount since the max-width will control
- - the single colum is not auto-centered
-
-*/
 
 // HEADER
-
-.site-header{
+.header-sticky-wrapper{
     position: relative;
-    margin-top: 3rem;
-    margin-bottom: 3rem;
-}
-.page-template-template-home {
-    .site-header {
-        margin-top: 0;
+    top: 0;
+    left:0;
+    right: 0;
+    width: 100%;
+    z-index: 10;
+    //padding-left: 2.4rem;
+    //padding-right: 2.4rem;
+    @include media-breakpoint-up(sm) {
+        //padding-right: 5rem;
+        //padding-left: 5rem;
     }
-    .site-branding{
-        bottom: auto;
-    }
 }
+.site-header{
+    max-width: $page-max-width;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: $page-padding-top;
+    padding-bottom: 2rem;
+    @include media-breakpoint-down(md) {
+        max-width: 35rem;
+    }
+    //-
+    background-color: white;
+
+}
+
 .site-branding {
-    position: absolute;
-    bottom: 0;
+    // xs logo:centered & stacked  + More margin
     text-align: center;
-    @include media-breakpoint-up(md) {}
-    @include media-breakpoint-up(lg) {}
-    @include media-breakpoint-up(xl) {}
+    // sm logo left & inline + more margin
+    // MD logo left & inline en dodo in the margin
+    @include media-breakpoint-only(sm) {
+        max-width: $max-text-width;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: left;
+        img {
+            position: fixed;
+            transform: translateX(-100%);
+            width: 3rem;
+            margin-left: -.5rem;
+        }
+        .site-title {
+            line-height: 55px;
+            display: inline;
+        }
+    }
+    @include media-breakpoint-only(md) {
+        max-width: $max-text-width;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: left;
+        img {
+            position: fixed;
+            transform: translateX(-100%);
+            margin-left: -1rem;
+        }
+        .site-title {
+            line-height: 55px;
+            display: inline;
+        }
+    }
+    @include media-breakpoint-down(md) {
+        max-width: 35rem;
+    }
+    @include media-breakpoint-up(lg) {
+        position: fixed;
+        margin-left: -10px;
+    }
+}
+
+.headroom--not-top{
+    @include media-breakpoint-up(lg) {
+        .site-title {
+            visibility: hidden;
+        }
+    }
+}
+.site-title{
+    padding-top: .425rem; // same as BS navlink to align with
+    padding-bottom: .425rem; // same as BS navlink to align with
+}
+
+.header-center-wrapper{
+    display: block;
+    @include media-breakpoint-only(md) {
+        clear: both;
+    }
+    @include media-breakpoint-up(lg) {
+        // width: 70%;
+        // float: left;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 .site-description{
     max-width: $max-text-width;
     margin-bottom: 2em;
     margin-left: auto;
     margin-right: auto;
-    overflow: hidden;
+    @include clearfix;
     color: gray;
-    font-size: 1.1em;
-    @include media-breakpoint-up(md) {}
-    @include media-breakpoint-up(lg) {}
-    @include media-breakpoint-up(xl) {}
+    font-size: 1.15em;
 }
-
 .main-navigation {
+    @include clearfix;
+    border-bottom: 1px solid $common-gray;
     position: relative;
     margin-left: auto;
     margin-right: auto;
-    clear: left;
     max-width: $max-text-width;
-    border-bottom: 1px solid gray;
-    @include media-breakpoint-up(md) {}
-    @include media-breakpoint-up(lg) {}
-    @include media-breakpoint-up(xl) {}
+    @include media-breakpoint-down(md) {
+        max-width: 35rem;
+    }
+    @include media-breakpoint-up(lg) {
+        margin-top: 55px; // height of the logo
+    }
 }
 
 // CONTENT
@@ -93,10 +164,9 @@ body {
     max-width: $max-text-width; // When there is a sidebar use less max-width
     margin-left: auto;
     margin-right: auto;
-    @include media-breakpoint-up(sm) {}
-    @include media-breakpoint-up(md) {}
-    @include media-breakpoint-up(lg) {}
-    @include media-breakpoint-up(xl) {}
+    @include media-breakpoint-down(md) {
+        max-width: 35rem;
+    }
 }
 // Always auto center
 .site-main {
@@ -124,4 +194,34 @@ body {
     margin-right: auto;
     $footer-padding-top: 2em;
     $footer-padding-bottom: 2em;
+}
+
+
+
+%show-breakpoints {
+    background-color: green;
+    &:before{
+        content: 'default';
+        position: absolute;
+        left:0;
+        top: 0;
+        background-color: gray;
+        color: white;
+        z-index: 1000000;
+        @include media-breakpoint-up(xs) {
+            content: 'xs';
+        }
+        @include media-breakpoint-up(sm) {
+            content: 'sm';
+        }
+        @include media-breakpoint-up(md) {
+            content: 'md';
+        }
+        @include media-breakpoint-up(lg) {
+            content: 'lg';
+        }
+        @include media-breakpoint-up(xl) {
+            content: 'xl';
+        }
+    }
 }

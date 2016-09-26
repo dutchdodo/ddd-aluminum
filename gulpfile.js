@@ -75,8 +75,9 @@ gulp.task('compile-styles', function () {
 gulp.task('compile-scripts', function () {
   return (
     gulp.src([
+    assetPath + '/js/headroom.js',
+    assetPath + '/js/jquery.headroom.js',
       assetPath + '/js/main.js'
-      //assetPath + '/js/somename.js'
     ])
     .pipe(concat('script.js'))
     .pipe(uglify())
