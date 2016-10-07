@@ -97,11 +97,14 @@ add_action( 'admin_enqueue_scripts', 'ddd_load_admin_scripts' );
 
 
 $optional_child_templates = array(
+	'inc/extended-cpts.php',		//Library for custom post types
+	'inc/extended-taxos.php',		//library for extended-taxonomies
 	'inc/posttypes_taxonomies.php', //Custom functions that registers custom post types.Custom functions that registers custom post types
 	'inc/sidebars_widgets.php', 	//Custom functions for registering sidebars, deregistering defaults WP widgets and related stuff
 	'inc/metabox.php', 				//Add functions for metaboxes
 	'inc/utils.php', 				//Utils functions
 	'inc/bs4navwalker.php',			// Register Custom Navigation Walker
+	'inc/custom.php',				// Register Custom Navigation Walker
 );
 
 foreach ( $optional_child_templates as $optional_child_template ) {

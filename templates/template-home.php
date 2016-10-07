@@ -9,6 +9,8 @@ get_header(); ?>
 
 				<?php get_template_part( 'template-parts/content', 'page' ); ?>
 
+				<?php get_template_part( 'template-parts/content', 'list-project' ); ?>
+
 			<?php endwhile; // end of the loop. ?>
 
 		</main><!-- #main -->

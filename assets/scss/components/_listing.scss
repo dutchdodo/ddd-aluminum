@@ -1,0 +1,67 @@
+/*--------------------------------------------------------------
+  Listing
+--------------------------------------------------------------*/
+
+/*
+    Default come from BS4 media-list
+*/
+// make a smaller image
+
+.media-list {
+    > .media {
+        margin-bottom: 1em;
+        padding-bottom: 1em;
+        border-bottom: 1px solid $common-gray;
+        &:first-child {
+            padding-top: 1em;
+            border-top: 1px solid $common-gray;
+        }
+    }
+}
+
+.media-list {
+    img{
+        width: 75px;
+        background-color: $gray-lighter;
+    }
+}
+
+// projects_listing
+.project-meta {
+    line-height: 1.4em;
+    color: $gray;
+}
+
+.project-meta > * {
+    @include media-breakpoint-up(sm) {
+        float: left;
+    }
+    margin-bottom: 0;
+    line-height: inherit;
+}
+.project-meta > dt {
+
+}
+.project-meta--jobrole {
+    display: none;
+    @include media-breakpoint-up(sm) {
+        float: right;
+        + dd {
+            float: right;
+            clear: right;
+        }
+    }
+}
+.project-meta--clientname {
+    display: none;
+    + dd {
+        font-size: 0.95em;
+    }
+}
+.project-meta--url {
+    display: none;
+    + dd {
+        clear: left;
+        font-size: 0.95em;
+    }
+}

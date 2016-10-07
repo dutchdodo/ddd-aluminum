@@ -15,33 +15,65 @@ function ddd_action_register_metaboxes () {
 	 */
 	global $pagenow;
 	if ( is_admin() && ( $pagenow == 'post.php' || $pagenow == 'post-new.php' || $pagenow == 'admin-ajax.php' ) ) {
-		$prefix = '_';
+		$prefix = 'ddd_';
 
-		$meta_boxes = array( );
+		global $meta_boxes;
+		$meta_boxes = array();
 
-		/**
-		 * Example of metabox
-		 * Delete me when adding a metabox
-		 *
-		 * $meta_boxes[] = array(
-			'id' => 'expertise_meta',		                        // Meta box id, unique per meta box
-			'title' => 'Gegevens',					                // Meta box title
-			'pages' => array( 'ssv_expertise' ),	                // Post types, accept custom post types as well, default is array('post'); optional
-			'context' => 'normal',					                // Where the meta box appear: normal (default), advanced, side; optional
-			'priority' => 'high',					                // Order of meta box: high (default), low; optional
-				'fields' => array(						            // List of meta fields
-					array(
-						'name' => 'Subtitel:',      		        // Field name
-						'desc' => 'Geef subtitel in (optioneel)',   // Field description, optional
-						'id' => $prefix . 'expertise_subtitel',     // Field id, i.e. the meta key
-						'type' => 'text',                           // Field type: text box
-						'std' => ''                                 // Default value, optional
-					)
-				)
-			);
-		 */
+		$meta_boxes[] = array(
+			// Meta box id, UNIQUE per meta box. Optional since 4.1.5
+			'id'         => 'project_meta',
+			// Meta box title - Will appear at the drag and drop handle bar. Required.
+			'title'      => __( 'Project information', 'ddd' ),
+			// Post types, accept custom post types as well - DEFAULT is 'post'. Can be array (multiple post types) or string (1 post type). Optional.
+			'post_types' => array( 'ddd-projects'),
+			// Where the meta box appear: normal (default), advanced, side. Optional.
+			'context'    => 'normal',
+			// Order of meta box: high (default), low. Optional.
+			'priority'   => 'high',
+			// Auto save: true, false (default). Optional.
+			'autosave'   => false,
+			// List of meta fields
+			'fields'     => array(
+				array(
+					// Field name - Will be used as label
+					'name'  => __( 'Clientname', 'ddd' ),
+					// Field ID, i.e. the meta key
+					'id'    => "{$prefix}client_name",
+					// Field description (optional)
+					'type'  => 'text',
+					// Default value (optional)
+					// 'std'   => __( 'Default text value', 'ddd' ),
+					// CLONES: Add to make the field cloneable (i.e. have multiple value)
+					'clone' => false,
+				),
+				array(
+					// Field name - Will be used as label
+					'name'  => __( 'URL', 'ddd' ),
+					// Field ID, i.e. the meta key
+					'id'    => "{$prefix}url_link",
+					// Field description (optional)
+					'type'  => 'text',
+					// Default value (optional)
+					// 'std'   => __( 'Default text value', 'ddd' ),
+					// CLONES: Add to make the field cloneable (i.e. have multiple value)
+					'clone' => false,
+				),
+				array(
+					// Field name - Will be used as label
+					'name'  => __( 'display URL as', 'ddd' ),
+					// Field ID, i.e. the meta key
+					'id'    => "{$prefix}url_link_text",
+					// Field description (optional)
+					'type'  => 'text',
+					// Default value (optional)
+					// 'std'   => __( 'Default text value', 'ddd' ),
+					// CLONES: Add to make the field cloneable (i.e. have multiple value)
+					'clone' => false,
+				),
+			)
+		);
 
-		//Register meta boxes
 		foreach ( $meta_boxes as $meta_box ) {
 
 			//Make sure the Meta_Box plugin is active.
@@ -53,70 +85,9 @@ function ddd_action_register_metaboxes () {
 }
 add_action('admin_init', 'ddd_action_register_metaboxes');
 
-/**
- * Check if meta boxes is included
- *
- * @return bool
- */
-function ddd_metabox_maybe_include($conditions) {
-    // Include in back-end only
-    if (!defined('WP_ADMIN') || !WP_ADMIN) {
+// Prevent use off undefined function rwmb_meta
+if ( ! function_exists( 'rwmb_meta' ) ) {
+    function rwmb_meta( $key, $args = '', $post_id = null ) {
         return false;
     }
-    // Always include for ajax
-    if (defined('DOING_AJAX') && DOING_AJAX) {
-        return true;
-    }
-    if (isset($_GET['post'])) {
-        $post_id = intval($_GET['post']);
-    } elseif (isset($_POST['post_ID'])) {
-        $post_id = intval($_POST['post_ID']);
-    } else {
-        $post_id = false;
-    }
-    $post_id = (int)$post_id;
-    $post = get_post($post_id);
-    foreach ($conditions as $cond => $v) {
-        // Catch non-arrays too
-        if (!is_array($v)) {
-            $v = array($v);
-        }
-        switch ($cond) {
-            case 'id':
-                if (in_array($post_id, $v)) {
-                    return true;
-                }
-                break;
-            case 'parent':
-                $post_parent = $post->post_parent;
-                if (in_array($post_parent, $v)) {
-                    return true;
-                }
-                break;
-            case 'slug':
-                $post_slug = $post->post_name;
-                if (in_array($post_slug, $v)) {
-                    return true;
-                }
-                break;
-            case 'category': //post must be saved or published first
-                $categories = get_the_category($post->ID);
-                $catslugs = array();
-                foreach ($categories as $category) {
-                    array_push($catslugs, $category->slug);
-                }
-                if (array_intersect($catslugs, $v)) {
-                    return true;
-                }
-                break;
-            case 'template':
-                $template = get_post_meta($post_id, '_wp_page_template', true);
-                if (in_array($template, $v)) {
-                    return true;
-                }
-                break;
-        }
-    }
-    // If no condition matched
-    return false;
 }
