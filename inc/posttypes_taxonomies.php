@@ -11,7 +11,8 @@ if( function_exists( 'register_extended_post_type' ) ) {
 
 			# Add the post type to the site's main RSS feed:
 			'show_in_feed' => true,
-			'supports'     => array( 'title', 'editor', 'thumbnail' ),
+			'supports'     => array( 'title', 'editor', 'page-attributes', 'thumbnail' ),
+            'hierarchical' => false,
 			'menu_icon'    => 'dashicons-feedback',
 
 			# Show all posts on the post type archive:
@@ -27,7 +28,7 @@ if( function_exists( 'register_extended_post_type' ) ) {
 				'featured_image'        => 'Image project',
 				'set_featured_image'    => 'Set featured image',
 				'remove_featured_image' => 'Remove featured image',
-				'use_featured_image'    => 'se as featured image',
+				'use_featured_image'    => 'set as featured image',
 			),
 
 
@@ -56,7 +57,40 @@ if( function_exists( 'register_extended_post_type' ) ) {
 
 		) );
 
+        register_extended_post_type( 'ddd-tools', array(
+
+            # Add the post type to the site's main RSS feed:
+            'show_in_feed' => true,
+            'supports'     => array( 'title', 'editor', 'page-attributes', 'thumbnail' ),
+            'hierarchical' => false,
+            'menu_icon'    => 'dashicons-feedback',
+
+            # Show all posts on the post type archive:
+            'archive' => array(
+                'nopaging' => true
+            ),
+            'show_in_rest' => true,
+
+            'labels' => array(
+                'all_items'				=> 'All Tools',
+                'add_new'				=> 'Add new Tool',
+                'add_new_item'			=> 'New Tool',
+                'featured_image'        => 'Image Tool',
+                'set_featured_image'    => 'Set featured image',
+                'remove_featured_image' => 'Remove featured image',
+                'use_featured_image'    => 'set as featured image',
+            )
+        ), array(
+
+            # Override the base names used for labels:
+            'singular' => 'Tool',
+            'plural'   => 'Tools',
+            'slug'     => 'tools'
+
+        ) );
+
     }
+
     add_action( 'init', 'ddd_init_register_extended_post_type', 3 );
 }
 

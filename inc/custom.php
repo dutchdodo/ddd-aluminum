@@ -8,7 +8,7 @@
  	$args = array (
  		'post_type'				 => 'ddd-projects',
  		'post_status'			 => 'publish',
- 		//'posts_per_page' 		 => -1,
+ 		'posts_per_page' 		 => -1,
  		//'order'					 => 'DESC',
  		//'orderby'				 => 'date',
  		'no_found_rows'          => true, //useful when pagination is not needed.
@@ -28,9 +28,10 @@
 			$query->post->ddd_client_name = rwmb_meta('ddd_client_name');
 			$query->post->ddd_url_link = rwmb_meta('ddd_url_link');
 			$query->post->ddd_url_link_text = rwmb_meta('ddd_url_link_text');
-			if ( has_post_thumbnail( $query->post->ID ) ) {
-				$query->post->ddd_featured_image = wp_get_attachment_image_src( rwmb_meta('_thumbnail_id') , 'thumbnail' )[0];
-			}
+			if ( has_post_thumbnail($query->post->ID) ) {
+                $full_image_path = wp_get_attachment_image_src( get_post_thumbnail_id( $query->post->ID ) , 'medium-complete' );
+                $query->post->ddd_featured_image = $full_image_path[0];
+            }
 			$taxo_terms =  wp_get_post_terms( $query->post->ID, 'ddd-projects-role', array( 'fields' => 'names' ) );
 			$query->post->job_role = implode(', ', $taxo_terms );
 

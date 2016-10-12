@@ -9,10 +9,12 @@ get_header(); ?>
 
 				<?php get_template_part( 'template-parts/content', 'page' ); ?>
 
-				<?php get_template_part( 'template-parts/content', 'list-project' ); ?>
-
 			<?php endwhile; // end of the loop. ?>
 
+			<?php get_template_part( 'template-parts/content', 'project-list' ); ?>
+			<?php //get_template_part( 'template-parts/content', 'project-card' ); ?>
+
+			<?php echo do_shortcode( '[ninja_form id=1]' ); ?>
 		</main><!-- #main -->
 	</div>
 

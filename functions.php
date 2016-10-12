@@ -40,6 +40,9 @@ if ( ! function_exists( 'ddd_setup' ) ) :
 	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
 	 */
 	add_theme_support( 'post-thumbnails' );
+	add_image_size( 'thumbnail-complete', 150, 9999, false ); // Thumbnail no-crop
+	add_image_size( 'medium-complete', 364, 9999, false ); // Thumbnail no-crop
+
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
@@ -83,7 +86,7 @@ function ddd_scripts() {
 	//wp_enqueue_style( 'googlefont-cabin' );
 
 	wp_enqueue_style( $handle = 'dutchdodo-startertheme-style', $src = get_stylesheet_directory_uri() . '/dist/css/style.css', $deps = array(), $ver = '1.0' );
-	wp_enqueue_script( $handle = 'dutchdodo-startertheme-script', $src = get_stylesheet_directory_uri() . '/dist/js/script.js', $deps = array( 'jquery' ), $version = '1.0', $in_footer = false );
+	wp_enqueue_script( $handle = 'dutchdodo-startertheme-script', $src = get_stylesheet_directory_uri() . '/dist/js/script.js', $deps = array( 'jquery' ), $version = '1.0', $in_footer = true );
 }
 add_action( 'wp_enqueue_scripts', 'ddd_scripts' );
 

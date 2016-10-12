@@ -21,8 +21,14 @@
 
 .media-list {
     img{
-        width: 75px;
-        background-color: $gray-lighter;
+        width: 140px;
+        @include media-breakpoint-up(sm) {
+            width: 200px;
+        }
+        border: 1px solid $gray-lighter;
+        &.with-placeholder {
+            background-color: $gray-lighter;
+        }
     }
 }
 

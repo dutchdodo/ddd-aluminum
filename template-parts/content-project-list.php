@@ -15,7 +15,7 @@
 						if($project_list_item->ddd_featured_image){
 			echo 		'<img class="media-object" src="'.$project_list_item->ddd_featured_image.'" alt="image of project">';
 						} else {
-			echo 		'<img class="media-object" src="'. get_stylesheet_directory_uri() .'/dist/images/placeholder-thumbnail-150x150.png" alt="image">';
+			echo 		'<img class="media-object with-placeholder" src="'. get_stylesheet_directory_uri() .'/dist/images/placeholder-thumbnail-150x150.png" alt="image">';
 						}
 			echo 	'</div>';
 			echo 	'<div class="media-body">';
@@ -25,11 +25,16 @@
 			echo 			'<dd>'.$project_list_item->job_role.'</dd>';
 			echo 			'<dt class="project-meta--clientname">Client</dt>';
 			echo 			'<dd>'.$project_list_item->ddd_client_name.'</dd>';
+							if( $project_list_item->ddd_url_link ){
 			echo 			'<dt class="project-meta--url">Link</dt>';
+							if( ! $project_list_item->ddd_url_link_text ) {
+								$project_list_item->ddd_url_link_text = 'view online';
+							}
 			echo 			'<dd><a href="'.$project_list_item->ddd_url_link.'" alt="link to project">'.$project_list_item->ddd_url_link_text.'</a></dd>';
+							}
 			echo 		'</dl>';
 			echo 	'</div>';
-			echo '<li/>';
+			echo '</li>';
 		}
 		echo '</ul>';
 

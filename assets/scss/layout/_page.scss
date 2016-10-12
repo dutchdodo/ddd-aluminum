@@ -12,6 +12,7 @@ html{
 html,
 body {
     height: 100%;
+    background-color: desaturate( mix( $brand-primary, white, 20% ), 30% );
 }
 
 // Setting the margin for the bottom and top of the-page
