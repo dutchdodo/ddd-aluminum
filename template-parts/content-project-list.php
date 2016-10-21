@@ -11,7 +11,7 @@
 		foreach( $projects_list as $project_list_item ) {
 
 			echo '<li class="media">';
-			echo 	'<div class="media-left">';
+			echo 	'<div class="media-left test">';
 						if($project_list_item->ddd_featured_image){
 			echo 		'<img class="media-object" src="'.$project_list_item->ddd_featured_image.'" alt="image of project">';
 						} else {

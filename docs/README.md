@@ -1,6 +1,16 @@
+
+
 # dutchdodostartertheme
 A modern startertheme build with Gulp and Bower.
 This setup is tested on Node 5.0 and 3.3.6
+
+## Plugins
+1. WP-Pusher or https://github.com/afragen/github-updater are used to update the plugin from github.
+2. Meta_box is used for extra information on postypes
+3. NinjaForms is used for contactform.
+4. Google Analytics by MonsterInsights
+5. Jetpack for CDN
+
 
 ## Setup
 1. Check if gulp is installed with gulp --v
