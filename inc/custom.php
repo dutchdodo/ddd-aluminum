@@ -10,7 +10,7 @@
  		'post_status'			 => 'publish',
  		'posts_per_page' 		 => -1,
  		//'order'					 => 'DESC',
- 		//'orderby'				 => 'date',
+ 		'orderby'				 => 'menu_order',
  		'no_found_rows'          => true, //useful when pagination is not needed.
  		'update_post_meta_cache' => false, //useful when post meta will not be utilized.
  		'update_post_term_cache' => false, //useful when taxonomy terms will not be utilized.
