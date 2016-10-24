@@ -18,7 +18,7 @@
 
 <body <?php body_class(); ?>>
 
-<div class="the-page">
+<div class="the_page thee_page--shadowed thee_page--boxed">
 
 	<div class="header-sticky-wrapper">
 		<header class="site-header clearfix" role="banner">
@@ -36,6 +36,7 @@
 			</section>
 
 			<div class="header-center-wrapper">
+
 				<?php if( is_page_template('templates/template-home.php') ) { ?>
 				<div class="site-description">
 					<div class="gravatar">
@@ -47,8 +48,8 @@
 					</div><!--/ author -->
 					<?php bloginfo( 'description' ); ?>
 				</div>
-
 				<?php } ?>
+
 				<nav class="main-navigation">
 					<h2 class="screen-reader-text">navigation</h2>
 					<?php

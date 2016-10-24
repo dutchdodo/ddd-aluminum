@@ -74,6 +74,49 @@ function ddd_action_register_metaboxes () {
 			)
 		);
 
+		// Settings for all post & page & other custompost-types
+		$meta_boxes[] = array(
+			// Meta box id, UNIQUE per meta box. Optional since 4.1.5
+			'id'         => 'post_meta',
+			// Meta box title - Will appear at the drag and drop handle bar. Required.
+			'title'      => __( 'Page settings', 'ddd' ),
+			// Post types, accept custom post types as well - DEFAULT is 'post'. Can be array (multiple post types) or string (1 post type). Optional.
+			'post_types' => array( 'post', 'page', 'ddd-projects'),
+			// Where the meta box appear: normal (default), advanced, side. Optional.
+			'context'    => 'normal',
+			// Order of meta box: high (default), low. Optional.
+			'priority'   => 'high',
+			// Auto save: true, false (default). Optional.
+			'autosave'   => false,
+			// List of meta fields
+			'fields'     => array(
+				array(
+					// Field name - Will be used as label
+					'name'  => __( 'Hide title of the page', 'ddd' ),
+					// Field ID, i.e. the meta key
+					'id'    => "{$prefix}hide_page_title",
+					// Field description (optional)
+					'type'  => 'checkbox',
+					// Default value (optional)
+					// 'std'   => __( 'Default text value', 'ddd' ),
+					// CLONES: Add to make the field cloneable (i.e. have multiple value)
+					'clone' => false,
+				),
+				array(
+					// Field name - Will be used as label
+					'name'  => __( 'First paragraph as lead', 'ddd' ),
+					// Field ID, i.e. the meta key
+					'id'    => "{$prefix}first_paragraph_as_lead",
+					// Field description (optional)
+					'type'  => 'checkbox',
+					// Default value (optional)
+					// 'std'   => __( 'Default text value', 'ddd' ),
+					// CLONES: Add to make the field cloneable (i.e. have multiple value)
+					'clone' => false,
+				),
+			)
+		);
+
 		foreach ( $meta_boxes as $meta_box ) {
 
 			//Make sure the Meta_Box plugin is active.

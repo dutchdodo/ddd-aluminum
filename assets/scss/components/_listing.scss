@@ -8,6 +8,23 @@
 // make a smaller image
 
 .media-list {
+    position: relative;
+    z-index: 4;
+    margin-bottom: 0;
+    @include clearfix();
+    &:before{
+        position: absolute;
+        content: '';
+        display: block;
+        top: 0;
+        right: -100%;
+        right: -100vw;
+        bottom: 0;
+        left: -100%;
+        left: -100vw;
+        background: #ECF7FB;
+        z-index: -1;
+    }
     > .media {
         margin-bottom: 1em;
         padding-bottom: 1em;
@@ -32,29 +49,28 @@
     }
 }
 
+
 // projects_listing
 .project-meta {
     line-height: 1.4em;
     color: $gray;
+    //margin-bottom: 0.25em;
 }
 
 .project-meta > * {
     @include media-breakpoint-up(sm) {
-        float: left;
+        //float: left;
     }
     margin-bottom: 0;
     line-height: inherit;
 }
-.project-meta > dt {
-
-}
 .project-meta--jobrole {
     display: none;
     @include media-breakpoint-up(sm) {
-        float: right;
+        //float: right;
         + dd {
-            float: right;
-            clear: right;
+            //float: right;
+            //clear: right;
         }
     }
 }
@@ -67,7 +83,7 @@
 .project-meta--url {
     display: none;
     + dd {
-        clear: left;
+        //clear: left;
         font-size: 0.95em;
     }
 }

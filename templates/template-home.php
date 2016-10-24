@@ -11,8 +11,8 @@ get_header(); ?>
 
 			<?php endwhile; // end of the loop. ?>
 
-			<?php get_template_part( 'template-parts/content', 'project-list' ); ?>
-			<?php //get_template_part( 'template-parts/content', 'project-card' ); ?>
+			<?php //get_template_part( 'template-parts/content', 'project-list' ); ?>
+			<?php get_template_part( 'template-parts/content', 'project-card' ); ?>
 
 			<?php echo do_shortcode( '[ninja_form id=1]' ); ?>
 		</main><!-- #main -->

@@ -1,0 +1,43 @@
+/*--------------------------------------------------------------
+  Card
+--------------------------------------------------------------*/
+
+.card{
+    box-shadow: 0px 2px 8px 0px rgba(0,0,0,.15);
+    border-radius: 0;
+    border: none;
+    .card-title{
+        font-size: 1.25em;
+        margin-bottom: .35em;
+    }
+    .card-block {
+        border-top: 1px solid lighten($common-gray, 10%);
+        padding-top: .7em;
+        padding-bottom: 0;
+    }
+    .project-meta--jobrole + dd {
+        color: $brand-primary;
+    }
+}
+
+.cards--tiled {
+    position: relative;
+    z-index: 4;
+    padding-bottom: 3em;
+    padding-top: 1em;
+    @include media-breakpoint-up(sm) {
+        @include clearfix;
+
+        > .card {
+            width: 48%;
+            float: left;
+            margin-bottom: 1.5em;
+            &:nth-child(odd){
+                clear: left;
+            }
+            &:nth-child(even){
+                float: right;
+            }
+        }
+    }
+}

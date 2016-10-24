@@ -1,9 +1,40 @@
 /*--------------------------------------------------------------
   Home
 --------------------------------------------------------------*/
-
-.page-template-template-home{
-    .entry-header{
-        display: none;
+.page-template-template-home {
+    .nf-form-cont {
+        position: relative;
+        z-index: 4;
+        color: white;
+        > * {
+            z-index: 4;
+        }
+        &:before{
+            position: absolute;
+            content: '';
+            display: block;
+            top: 0;
+            right: -200%;
+            right: -100vw;
+            bottom: 0;
+            left: -200%;
+            left: -100vw;
+            background-color: #801C9A;
+            z-index: -1;
+        }
+        padding-top: $page-padding-top;
+        padding-bottom: $page-padding-bottom;
+        margin-bottom: -$page-padding-bottom;
+    }
+    .ninja-forms-req-symbol {
+        color: white;
+    }
+    .nf-error-msg{
+        float: left;
+        background-color: red;
+        color: white;
+        border-radius: 4px;
+        padding-left: 0.5em;
+        padding-right: 0.5em;
     }
 }

@@ -9,7 +9,7 @@
 ?>
 
 <section class="no-results not-found">
-	<header class="page-header">
+	<header class="page-header" <?php if( rwmb_meta('ddd_hide_page_title') ) echo 'hidden'; ?>>
 		<h2 class="page-title"><?php _e( 'Nothing Found', 'dutchdodo-startertheme' ); ?></h2>
 	</header><!-- .page-header -->
 
