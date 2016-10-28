@@ -2,246 +2,78 @@
   Page
 --------------------------------------------------------------*/
 
-/*
-     Centering the page and setting margins between elelents
-*/
-html{
-    //@extend %show-breakpoints;
-}
 // Preparing for sticky footer, or fullscreen stuff  */
 html,
 body {
     height: 100%;
     overflow-x: hidden;
-    //background-color: desaturate( mix( $brand-primary, white, 20% ), 30% );
 }
-
-// Setting the margin for the bottom and top of the-page
-.the_page {
+// canvas
+.d_page {
     position: relative;
-    min-height: 94%;
-    max-width: $page-max-width;
     margin-left: auto;
     margin-right: auto;
-    // padding-top: 130px;
-    padding-right: 2.4rem;
-    padding-bottom: $page-padding-bottom;
-    padding-left: 2.4rem;
-    //-
-    &.the_page--shadowed{
-        box-shadow: 0px 0px 20px 0px rgba(0,0,0,.15);
-    }
-    &.the_page--boxed{
-        overflow: hidden;
-    }
-    background-color: white;
-    @include media-breakpoint-up(sm) {
-        padding-right: 5rem;
-        padding-left: 5rem;
-    }
+    max-width: $page-max-width;
+    min-height: 100%;
+    padding-right: $page-padding-right;
+    padding-left: $page-padding-left;
+}
+.d_page--shadowed{
+    box-shadow: 0px 0px 20px 0px rgba(0,0,0,.15);
+}
+.d_page--boxed{
+    overflow: hidden;
 }
 
-// HEADER
-.header-sticky-wrapper{
+// Visual section, not semantic.
+.d_section{
     position: relative;
-    top: 0;
-    left:0;
-    right: 0;
-    width: 100%;
-    z-index: 10;
-    //padding-left: 2.4rem;
-    //padding-right: 2.4rem;
-    @include media-breakpoint-up(sm) {
-        //padding-right: 5rem;
-        //padding-left: 5rem;
-    }
-}
-.site-header{
-    max-width: $page-max-width;
     margin-left: auto;
     margin-right: auto;
-    padding-top: $page-padding-top;
-    padding-bottom: 2rem;
-    @include media-breakpoint-down(md) {
-        max-width: 35rem;
-    }
-    &:before{
-        position: absolute;
-        //content: '';
-        display: block;
-        top: 0;
-        right: -100%;
-        right: -100vw;
-        bottom: 0;
-        left: -100%;
-        left: -100vw;
-        background: #ECF7FB;
-        z-index: -1;
-    }
-    //-
-    background-color: white;
-
+    padding-top: 3rem;
+    padding-bottom: 3.5rem;
+    //padding-top: $vertical-padding * 3;
+    //padding-bottom: $vertical-padding * 4;
 }
-
-.site-branding {
-    // xs logo:centered & stacked  + More margin
+.d_section__innerwrapper{
+    position: relative;
+    padding-top: 3rem;
+    padding-bottom: 4rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+.d_section--max-and-center{
+        @extend %center-and-max-width-for-text;
+        @include clearfix;
+}
+.d_section__title{
+    margin-bottom: .6em;
+    font-size: 1.4rem;
     text-align: center;
-    // sm logo left & inline + more margin
-    // MD logo left & inline en dodo in the margin
-    @include media-breakpoint-only(sm) {
-        max-width: $max-text-width;
-        margin-left: auto;
-        margin-right: auto;
-        text-align: left;
-        img {
-            position: fixed;
-            transform: translateX(-100%);
-            width: 3rem;
-            margin-left: -.5rem;
-        }
-        .site-title {
-            line-height: 55px;
-            display: inline;
-        }
-    }
-    @include media-breakpoint-only(md) {
-        max-width: $max-text-width;
-        margin-left: auto;
-        margin-right: auto;
-        text-align: left;
-        img {
-            position: fixed;
-            transform: translateX(-100%);
-            margin-left: -1rem;
-        }
-        .site-title {
-            line-height: 55px;
-            display: inline;
-        }
-    }
-    @include media-breakpoint-down(md) {
-        max-width: 35rem;
-    }
-    @include media-breakpoint-up(lg) {
-        position: fixed;
-        margin-left: -10px;
-    }
+}
+// Modifiers for padding
+.d_section--attach-top{
+    padding-top: 0;
+}
+.d_section--attach-bottom{
+    padding-bottom: 0;
 }
 
-.headroom--not-top{
-    @include media-breakpoint-up(lg) {
-        .site-title {
-            visibility: hidden;
-        }
-    }
-}
-.site-title{
-    padding-top: .425rem; // same as BS navlink to align with
-    padding-bottom: .425rem; // same as BS navlink to align with
-}
-
-.header-center-wrapper{
-    display: block;
-    @include media-breakpoint-only(md) {
-        clear: both;
-    }
-    @include media-breakpoint-up(lg) {
-        // width: 70%;
-        // float: left;
-        margin-left: auto;
-        margin-right: auto;
-    }
-}
-.site-description{
-    max-width: $max-text-width;
-    margin-bottom: 2em;
-    margin-left: auto;
-    margin-right: auto;
-    @include clearfix;
-    color: gray;
-    font-size: 1.15em;
-}
-.main-navigation {
-    @include clearfix;
-    border-bottom: 1px solid $common-gray;
-    position: relative;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: $max-text-width;
-    @include media-breakpoint-down(md) {
-        max-width: 35rem;
-    }
-    @include media-breakpoint-up(lg) {
-        margin-top: 55px; // height of the logo
-    }
-}
-
-// CONTENT
-
-// For positioning the sidebar on the same hight as the content
-.site-main-wrapper{
-    position: relative;
-    max-width: $max-text-width; // When there is a sidebar use less max-width
-    margin-left: auto;
-    margin-right: auto;
-    @include media-breakpoint-down(md) {
-        max-width: 35rem;
-    }
-}
-// Always auto center
-.site-main {
-    position: relative;
-}
-
-.sidebar {
-    font-size: 0.9em;
-    display: none;
+// Using before for full width background
+%before-after-section-as-full-width-background-color{
     position: absolute;
-    width: 14rem;
-    right: -16rem;
-    margin-left: 3%;
+    content: '';
+    display: block;
     top: 0;
-    @include media-breakpoint-up(lg) {
-        display: block;
-    }
+    right: -200%;
+    right: -50vw;
+    bottom: 0;
+    left: -200%;
+    left: -50vw;
+    z-index: -1;
 }
-
-// FOOTER
-
-.site-info {
-    max-width: $max-text-width;
+%center-and-max-width-for-text {
     margin-left: auto;
     margin-right: auto;
-    $footer-padding-top: 2em;
-    $footer-padding-bottom: 2em;
-}
-
-
-
-%show-breakpoints {
-    background-color: green;
-    &:before{
-        content: 'default';
-        position: absolute;
-        left:0;
-        top: 0;
-        background-color: gray;
-        color: white;
-        z-index: 1000000;
-        @include media-breakpoint-up(xs) {
-            content: 'xs';
-        }
-        @include media-breakpoint-up(sm) {
-            content: 'sm';
-        }
-        @include media-breakpoint-up(md) {
-            content: 'md';
-        }
-        @include media-breakpoint-up(lg) {
-            content: 'lg';
-        }
-        @include media-breakpoint-up(xl) {
-            content: 'xl';
-        }
-    }
+    max-width: $max-text-width;
 }

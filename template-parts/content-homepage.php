@@ -11,6 +11,14 @@
 		<?php the_title( '<h2 class="entry-title">', '</h2>' ); ?>
 	</header><!-- .entry-header -->
 
+	<div class="d_gravatar d_gravatar--home">
+	<?php
+		// grab admin email and their photo
+		$admin_email = get_option('admin_email');
+		echo get_avatar( $admin_email, 100 );
+	?>
+	</div><!--/ author -->
+
 	<div class="entry-content">
 		<?php the_content(); ?>
 		<?php

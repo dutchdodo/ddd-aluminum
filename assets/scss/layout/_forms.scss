@@ -1,3 +1,26 @@
 /*--------------------------------------------------------------
   Forms
 --------------------------------------------------------------*/
+// Using Ninja Forms
+
+.nf-form-cont {
+    input[type="email"],
+    input[type="text"],
+    textarea{
+        border: 1px solid $common-gray;
+        resize: none;
+    }
+}
+// Error styling
+.ninja-forms-req-symbol {
+    //color: white;
+}
+// Error styling
+.nf-error-msg{
+    float: left;
+    background-color: red;
+    color: white !important;// Ay, touched by DrEvil
+    border-radius: 4px;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+}

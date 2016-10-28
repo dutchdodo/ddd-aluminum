@@ -1,0 +1,89 @@
+/*--------------------------------------------------------------
+  Events
+--------------------------------------------------------------*/
+
+.d_position{
+    position: relative;
+    font-size: 1em;
+    margin-bottom: 2em;
+    line-height: 1.4em;
+    > dd {
+        margin-bottom: .35rem;
+    }
+}
+.d_position__name{
+    display: inline-block;
+    margin-right: 1em;
+    font-size: 1.4em;
+}
+.d_position__function{
+    margin-bottom: .4rem;
+    font-size: 0.8em;
+    text-transform: uppercase;
+    color: gray;
+}
+.d_position__function-start{
+    display: inline-block;
+    color: purple;
+    &:after{
+        content: '-';
+        display: inline-block;
+        margin-left: .6em;
+        margin-right: .4em;
+    }
+}
+.d_position__function-end{
+    display: inline-block;
+    color: purple;
+}
+.d_position__description{
+    font-size: .95em;
+}
+
+// Timeline enhancement
+.d_position{
+    &:before{
+        position: absolute;
+        content: '';
+        left: -2.4em;
+        display: block;
+        width: 1em;
+        height: 1em;
+        border-radius: 50%;
+        background-color: #11BAE9;
+        top: .25em;
+    }
+    &:after{
+        position: absolute;
+        content: '';
+        left: - 2.4em + .5em; // same position as bullit + half the bullit
+        margin-left: -1px; // correcting half the width of the line
+        display: block;
+        width: 2px;
+        bottom: - ( 2em + .25em + .5em ); // Margin between items + ~half of line-height minus 1em + half the bullit
+        background-color: #11BAE9;
+        top: .25em + .5em;
+    }
+}
+// Last item
+.d_position + .d_position {
+    &:after{
+        display: none;
+    }
+}
+// Single item
+.d_position:first-child:last-child {
+    &:after{
+        display: none;
+    }
+}
+
+// Bullit variation for education
+.d_timeline-event--education{
+    &:before{
+        width: .9em;
+        height: .9em;
+        border-radius: 0;
+        transform: rotate(45deg);
+    }
+}

@@ -2,8 +2,6 @@
 /**
  * The header for our theme.
  *
- * Displays all of the <head> section and everything up till <div id="content">
- *
  * @package dutchdodo startertheme
  */
 ?><!DOCTYPE html>
@@ -18,14 +16,18 @@
 
 <body <?php body_class(); ?>>
 
-<div class="the_page thee_page--shadowed thee_page--boxed">
+<div class="d_page">
 
 	<div class="header-sticky-wrapper">
 		<header class="site-header clearfix" role="banner">
 
 			<div class="site-branding">
-				<a href="."><img width="74" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/images/ddd-logo.svg"/></a>
+				<a href=".">
+					<!-- <img width="74" src="<?php //echo get_stylesheet_directory_uri(); ?>/dist/images/ddd-logo.svg"/> -->
+				<?php echo file_get_contents( get_stylesheet_directory_uri()."/dist/images/ddd-logo.svg"); ?>
+				</a>
 				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+				<span>UX/UI Designer</span>
 			</div><!-- .site-branding -->
 
 			<section>
@@ -35,42 +37,30 @@
 				</ul>
 			</section>
 
-			<div class="header-center-wrapper">
-
-				<?php if( is_page_template('templates/template-home.php') ) { ?>
-				<div class="site-description">
-					<div class="gravatar">
-					<?php
-						// grab admin email and their photo
-						$admin_email = get_option('admin_email');
-						echo get_avatar( $admin_email, 100 );
-					?>
-					</div><!--/ author -->
-					<?php bloginfo( 'description' ); ?>
-				</div>
-				<?php } ?>
-
-				<nav class="main-navigation">
-					<h2 class="screen-reader-text">navigation</h2>
-					<?php
-						//checks for existance of menu: otherwise Walkers could fail
-						if( has_nav_menu( 'primary' ) ) {
-							wp_nav_menu([
-							   'menu'            => 'primary',
-							   'theme_location'  => 'primary',
-							   'container'       => 'div',
-							   'container_id'    => 'exCollapsingNavbar2',
-							   //'container_class' => 'collapse navbar-toggleable-sm',
-							   'menu_id'         => false,
-							   'menu_class'      => 'nav navbar-nav',
-							   'depth'           => 2,
-							   'fallback_cb'     => 'bs4navwalker::fallback',
-							   'walker'          => new bs4navwalker()
-							]);
-						}
-						?>
-				</nav><!-- #site-navigation -->
+			<div class="site-description" hidden>
+				<?php bloginfo( 'description' ); ?>
 			</div>
+
+			<nav class="main-navigation">
+				<h2 class="screen-reader-text">navigation</h2>
+				<?php
+					//checks for existance of menu: otherwise Walkers could fail
+					if( has_nav_menu( 'primary' ) ) {
+						wp_nav_menu([
+						   'menu'            => 'primary',
+						   'theme_location'  => 'primary',
+						   'container'       => 'div',
+						   'container_id'    => 'exCollapsingNavbar2',
+						   //'container_class' => 'collapse navbar-toggleable-sm',
+						   'menu_id'         => false,
+						   'menu_class'      => 'nav navbar-nav',
+						   'depth'           => 2,
+						   'fallback_cb'     => 'bs4navwalker::fallback',
+						   'walker'          => new bs4navwalker()
+						]);
+					}
+					?>
+			</nav><!-- #site-navigation -->
 
 		</header><!-- #masthead -->
 	</div>

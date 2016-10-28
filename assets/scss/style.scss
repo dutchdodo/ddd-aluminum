@@ -63,6 +63,8 @@
 @import "components/breadcrumbs";
 @import "components/listing";
 @import "components/cards";
+@import "components/d_progressbar";
+@import "components/d_events";
 
 /*--------------------------------------------------------------
 6.0 Pages, specific styling for a single page
@@ -70,3 +72,36 @@
 @import "pages/home";
 @import "pages/contact";
 @import "pages/404";
+
+
+
+%show-breakpoints {
+    //background-color: green;
+    &:before{
+        content: 'default';
+        position: absolute;
+        left:0;
+        top: 0;
+        background-color: gray;
+        color: white;
+        z-index: 1000000;
+        @include media-breakpoint-up(xs) {
+            content: 'xs';
+        }
+        @include media-breakpoint-up(sm) {
+            content: 'sm';
+        }
+        @include media-breakpoint-up(md) {
+            content: 'md';
+        }
+        @include media-breakpoint-up(lg) {
+            content: 'lg';
+        }
+        @include media-breakpoint-up(xl) {
+            content: 'xl';
+        }
+    }
+}
+html{
+    //@extend %show-breakpoints;
+}

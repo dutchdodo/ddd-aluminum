@@ -6,7 +6,7 @@
 
 <?php
 	if ( $projects_list = ddd_get_projects() ) {
-		echo 	'<div class="cards--tiled">';
+		echo 	'<div class="d_cards--tiled">';
 		foreach( $projects_list as $project_list_item ) {
 
 				echo '<div class="card text-xs-center">';

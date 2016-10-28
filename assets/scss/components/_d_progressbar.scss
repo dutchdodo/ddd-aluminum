@@ -1,0 +1,20 @@
+/*--------------------------------------------------------------
+  progressbar
+--------------------------------------------------------------*/
+
+.d_progressbar{
+    font-size: .9em;
+    margin-bottom: 0.5em;
+}
+.d_progressbar__label{
+    color: $gray-light;
+}
+.d_progressbar__scale{
+    height: .6em;
+    background-color: $gray;
+}
+.d_progressbar__score{
+    height: inherit;
+    width: 80%;
+    background-color: #11BAE9;
+}

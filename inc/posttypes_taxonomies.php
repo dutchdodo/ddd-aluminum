@@ -57,6 +57,71 @@ if( function_exists( 'register_extended_post_type' ) ) {
 
 		) );
 
+        register_extended_post_type( 'ddd-positions', array(
+
+            # Add the post type to the site's main RSS feed:
+            'show_in_feed' => true,
+            'supports'     => array( 'title', 'editor', 'page-attributes', 'thumbnail' ),
+            'hierarchical' => false,
+            'menu_icon'    => 'dashicons-feedback',
+
+            # Show all posts on the post type archive:
+            'archive' => array(
+                'nopaging' => true
+            ),
+            'show_in_rest' => true,
+
+            'labels' => array(
+                'all_items'				=> 'All Positions',
+                'add_new'				=> 'Add new Position',
+                'add_new_item'			=> 'New Position',
+                'featured_image'        => 'Image Position',
+                'set_featured_image'    => 'Set featured image',
+                'remove_featured_image' => 'Remove featured image',
+                'use_featured_image'    => 'set as featured image',
+            )
+        ), array(
+
+            # Override the base names used for labels:
+            'singular' => 'Position',
+            'plural'   => 'Positions',
+            'slug'     => 'position'
+
+        ) );
+
+        register_extended_post_type( 'ddd-education', array(
+
+            # Add the post type to the site's main RSS feed:
+            'show_in_feed' => true,
+            'supports'     => array( 'title', 'editor', 'page-attributes', 'thumbnail' ),
+            'hierarchical' => false,
+            'menu_icon'    => 'dashicons-feedback',
+
+            # Show all posts on the post type archive:
+            'archive' => array(
+                'nopaging' => true
+            ),
+            'show_in_rest' => true,
+
+            'labels' => array(
+                'all_items'				=> 'All Education',
+                'add_new'				=> 'Add new Education',
+                'add_new_item'			=> 'New Education',
+                'featured_image'        => 'Image Position',
+                'set_featured_image'    => 'Set featured image',
+                'remove_featured_image' => 'Remove featured image',
+                'use_featured_image'    => 'set as featured image',
+            )
+        ), array(
+
+            # Override the base names used for labels:
+            'singular' => 'Education',
+            'plural'   => 'Education',
+            'slug'     => 'education'
+
+        ) );
+
+
         register_extended_post_type( 'ddd-tools', array(
 
             # Add the post type to the site's main RSS feed:

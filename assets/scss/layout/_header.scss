@@ -1,45 +1,87 @@
 /*--------------------------------------------------------------
   Header
 --------------------------------------------------------------*/
-.site-title{
-    font-size: 1.2em;
-    margin-bottom: 0.6rem;
-}
 
-li > a {
-    color: $gray-light; //#7721ae;
-    text-transform: lowercase;
-}
-
-.gravatar {
-    width: 74px;
-    img{
-        @extend .img-circle;
-        @extend .img-fluid;
-    }
-}
-.site-description {
-    margin-top: 0.4em;
+// HEADER
+.header-sticky-wrapper{
     position: relative;
-    padding-right: 100px;
-    .gravatar {
+    top: 0;
+    right: 0;
+    left:0;
+    width: 100%;
+    z-index: 10;
+}
+.site-header{
+    max-width: $page-max-width;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: $page-padding-top;
+    &:before{
         position: absolute;
-        right: 0;
-        top: 0.4em;
+        content: '';
+        display: block;
+        top: 0;
+        right: -200%;
+        right: -50vw;
+        bottom: 0;
+        left: -200%;
+        left: -50vw;
+        background: #801C9A;
+        z-index: -1;
     }
-    @include media-breakpoint-only(xs) {
-        padding-right: 0;
-        .gravatar{
-            position: relative;
-            margin-left: auto;
-            margin-right: auto;
-            width: 90px;
-            margin-top: 1.6em;
-            margin-bottom: 2.6em;
+}
+
+.site-branding {
+    text-align: center;
+    color: white;
+    a {
+        color: white;
+
+    }
+    svg {
+        .cls-1{
+            stroke: currentColor;
+        }
+        width: 50px;
+        height: 38px;
+    }
+    @include media-breakpoint-up(sm) {
+        svg {
+            position: absolute;
+            left: 0;
+            width: 74px;
+            height: 55px;
         }
     }
 }
+// Branding part, combination of logo and optional title
+.site-title{
+    font-size: 2rem;
+    + span {
+        color: white;
+    }
+}
 
-.main-navigation{
+.main-navigation {
+    display: none;
+    background-color: gray;
+    @include clearfix;
+    border-bottom: 1px solid $common-gray;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: $max-text-width;
     padding-bottom: 0.2em;
+    @include media-breakpoint-down(md) {
+        //max-width: 35rem;
+    }
+    @include media-breakpoint-up(lg) {
+        //margin-top: 55px; // height of the logo
+    }
+}
+
+// Not using navbarlogic so simple styling
+li > a {
+    color: $gray-light; //#7721ae;
+    text-transform: lowercase;
 }

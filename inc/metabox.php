@@ -117,6 +117,118 @@ function ddd_action_register_metaboxes () {
 			)
 		);
 
+		// Settings for all post & page & other custompost-types
+		$meta_boxes[] = array(
+			// Meta box id, UNIQUE per meta box. Optional since 4.1.5
+			'id'         => 'post_meta',
+			// Meta box title - Will appear at the drag and drop handle bar. Required.
+			'title'      => __( 'Position meta', 'ddd' ),
+			// Post types, accept custom post types as well - DEFAULT is 'post'. Can be array (multiple post types) or string (1 post type). Optional.
+			'post_types' => array( 'ddd-positions' ),
+			// Where the meta box appear: normal (default), advanced, side. Optional.
+			'context'    => 'normal',
+			// Order of meta box: high (default), low. Optional.
+			'priority'   => 'high',
+			// Auto save: true, false (default). Optional.
+			'autosave'   => false,
+			// List of meta fields
+			'fields'     => array(
+				array(
+					// Field name - Will be used as label
+					'name'  => __( 'function name', 'ddd' ),
+					// Field ID, i.e. the meta key
+					'id'    => "{$prefix}function_name",
+					// Field description (optional)
+					'type'  => 'text',
+					// Default value (optional)
+					// 'std'   => __( 'Default text value', 'ddd' ),
+					// CLONES: Add to make the field cloneable (i.e. have multiple value)
+					'clone' => false,
+				),
+				array(
+					// Field name - Will be used as label
+					'name'  => __( 'Startdate', 'ddd' ),
+					// Field ID, i.e. the meta key
+					'id'    => "{$prefix}start_date",
+					// Field description (optional)
+					'type'  => 'text',
+					// Default value (optional)
+					// 'std'   => __( 'Default text value', 'ddd' ),
+					// CLONES: Add to make the field cloneable (i.e. have multiple value)
+					'clone' => false,
+				),
+				array(
+					// Field name - Will be used as label
+					'name'  => __( 'Enddate', 'ddd' ),
+					// Field ID, i.e. the meta key
+					'id'    => "{$prefix}end_date",
+					// Field description (optional)
+					'type'  => 'text',
+					// Default value (optional)
+					// 'std'   => __( 'Default text value', 'ddd' ),
+					// CLONES: Add to make the field cloneable (i.e. have multiple value)
+					'clone' => false,
+				),
+			)
+		);
+
+		// Settings for all post & page & other custompost-types
+		$meta_boxes[] = array(
+			// Meta box id, UNIQUE per meta box. Optional since 4.1.5
+			'id'         => 'post_meta',
+			// Meta box title - Will appear at the drag and drop handle bar. Required.
+			'title'      => __( 'Education meta', 'ddd' ),
+			// Post types, accept custom post types as well - DEFAULT is 'post'. Can be array (multiple post types) or string (1 post type). Optional.
+			'post_types' => array( 'ddd-education' ),
+			// Where the meta box appear: normal (default), advanced, side. Optional.
+			'context'    => 'normal',
+			// Order of meta box: high (default), low. Optional.
+			'priority'   => 'high',
+			// Auto save: true, false (default). Optional.
+			'autosave'   => false,
+			// List of meta fields
+			'fields'     => array(
+				array(
+					// Field name - Will be used as label
+					'name'  => __( 'Course name', 'ddd' ),
+					// Field ID, i.e. the meta key
+					'id'    => "{$prefix}course_name",
+					// Field description (optional)
+					'type'  => 'text',
+					// Default value (optional)
+					// 'std'   => __( 'Default text value', 'ddd' ),
+					// CLONES: Add to make the field cloneable (i.e. have multiple value)
+					'clone' => false,
+				),
+				array(
+					// Field name - Will be used as label
+					'name'  => __( 'Startdate', 'ddd' ),
+					// Field ID, i.e. the meta key
+					'id'    => "{$prefix}start_date",
+					// Field description (optional)
+					'type'  => 'text',
+					// Default value (optional)
+					// 'std'   => __( 'Default text value', 'ddd' ),
+					// CLONES: Add to make the field cloneable (i.e. have multiple value)
+					'clone' => false,
+				),
+				array(
+					// Field name - Will be used as label
+					'name'  => __( 'Enddate', 'ddd' ),
+					// Field ID, i.e. the meta key
+					'id'    => "{$prefix}end_date",
+					// Field description (optional)
+					'type'  => 'text',
+					// Default value (optional)
+					// 'std'   => __( 'Default text value', 'ddd' ),
+					// CLONES: Add to make the field cloneable (i.e. have multiple value)
+					'clone' => false,
+				),
+			)
+		);
+
+
+
 		foreach ( $meta_boxes as $meta_box ) {
 
 			//Make sure the Meta_Box plugin is active.

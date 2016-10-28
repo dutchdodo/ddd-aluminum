@@ -4,22 +4,23 @@
 
  // Own Variables
  /*----------------*/
+// Defines the dimensions for the page
+$page-max-width: 58rem; // ~ 940px;
 
-$page-max-width: 1000px;
-
+// Defining the outer margins for the canvas
 $page-padding-top: 1.5rem;
 $page-padding-right: 2.4rem;
 $page-padding-bottom: 3rem;
 $page-padding-left: 2.4rem;
 
+$vertical-padding: 1em; //used as a multiplier
+
 $max-text-width: 38rem;
 $max-text-width-with-sidebar: 34rem;
 $sidebar-width: 14rem;
 
-$footer-padding-top: 2rem;
-$footer-padding-bottom: 2rem;
-
 $common-gray: lighten(black, 80%);
+$ddd-blue-lighter: #ECF7FB;
 
  // BS Variables
  /*----------------*/
@@ -63,3 +64,6 @@ $container-max-widths: (
 
 $grid-columns:      12 !default;
 $grid-gutter-width: 30px !default;
+
+
+$tag-font-weight : normal !default;

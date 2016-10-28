@@ -20,11 +20,10 @@
     }
 }
 
-.cards--tiled {
+.d_cards--tiled {
     position: relative;
     z-index: 4;
     padding-bottom: 3em;
-    padding-top: 1em;
     @include media-breakpoint-up(sm) {
         @include clearfix;
 

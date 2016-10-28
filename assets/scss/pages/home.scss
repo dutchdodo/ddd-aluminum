@@ -1,40 +1,138 @@
 /*--------------------------------------------------------------
   Home
 --------------------------------------------------------------*/
-.page-template-template-home {
-    .nf-form-cont {
-        position: relative;
-        z-index: 4;
-        color: white;
-        > * {
-            z-index: 4;
-        }
+.d_gravatar {
+    width: 156px;
+    img{
+        @extend .img-circle;
+        @extend .img-fluid;
+    }
+}
+// Contentpart for home
+.d_gravatar--home {
+    margin-top: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    margin-left: auto;
+    width: 100px;
+    @include media-breakpoint-up(sm) {
+        float: right;
+        margin-right: 0;
+        margin-bottom: 3rem;
+        margin-left: 3rem;
+    }
+}
+// VC Card
+.d_cvcard{
+    &:before{
+        @extend %before-after-section-as-full-width-background-color;
+        background: #801C9A;
+    }
+    &:after{
+        @extend %before-after-section-as-full-width-background-color;
+        top: 50%;
+        background: mix(#801C9A, white, 70%) ;
+    }
+    .d_section__innerwrapper{
+        background-color: white;
         &:before{
+            content: 'Hello';
+            display: block;
             position: absolute;
+            top: 0;
+            left: 0;
+            width: 5em;
+            height: 2em;
+            font-size: 1rem;
+            line-height: 2em;
+            text-align: center;
+            transform: translateY(-100%);
+            background-color: #11BAE9;
+            color: white;
+        }
+        &:after{
             content: '';
             display: block;
+            position: absolute;
             top: 0;
-            right: -200%;
-            right: -100vw;
-            bottom: 0;
-            left: -200%;
-            left: -100vw;
-            background-color: #801C9A;
-            z-index: -1;
+            left: 2.1em;
+            width: 0;
+            height: 0;
+            border-left: .5em solid transparent;
+            border-right: .5em solid transparent;
+            border-top: .8em solid #11BAE9;
         }
-        padding-top: $page-padding-top;
-        padding-bottom: $page-padding-bottom;
-        margin-bottom: -$page-padding-bottom;
     }
-    .ninja-forms-req-symbol {
-        color: white;
+}
+
+// Styling the first p as a lead
+.d_cvcard p:first-of-type{
+    font-size: 1.2rem;
+    margin-bottom: 2em;
+    overflow: hidden;
+    color: $gray;
+}
+// Keywordsbar
+.d_keywords {
+    font-size: 1.25rem;
+    text-align: center;
+    &:before{
+        @extend %before-after-section-as-full-width-background-color;
+        background: $ddd-blue-lighter;
     }
-    .nf-error-msg{
+}
+// Interestsbar
+.d_interests {
+    font-size: 1.25rem;
+    text-align: center;
+    &:before{
+        @extend %before-after-section-as-full-width-background-color;
+        background: $ddd-blue-lighter;
+    }
+}
+
+// Skillboard
+.d_home-skillboard{
+    &:before{
+        @extend %before-after-section-as-full-width-background-color;
+        background: $ddd-blue-lighter;
+    }
+    .d_section__innerwrapper{
+        background-color: #B5E0F0;
+    }
+}
+.d_home-skillboard{
+    .d_progressbar{
+        width: 46%;
         float: left;
-        background-color: red;
+        &:nth-child(even){
+            float: right;
+        }
+    }
+}
+
+// Positions listing
+.d_home-positions {
+}
+
+// Tiled cards with projects
+.d_home-cards {
+    &:before{
+        @extend %before-after-section-as-full-width-background-color;
+        background-color: $ddd-blue-lighter;
+    }
+}
+
+// Contactform
+.d_home-contact {
+    &:before{
+        @extend %before-after-section-as-full-width-background-color;
+        background-color: #801C9A;
+    }
+    .d_section__innerwrapper{
+        background-color: white;
+    }
+    .d_section__title {
         color: white;
-        border-radius: 4px;
-        padding-left: 0.5em;
-        padding-right: 0.5em;
     }
 }
