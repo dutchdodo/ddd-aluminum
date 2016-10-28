@@ -5,21 +5,7 @@
 
 // CONTENT
 .mainarticle {
-    position: relative;
-    margin-right: auto;
-    margin-left: auto;
-    max-width: $max-text-width;
-    &:before{
-        position: absolute;
-        content: '';
-        display: block;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        background: white;
-        z-index: -1;
-    }
+    //position: relative;
 }
 .sidebar {
     font-size: 0.9em;

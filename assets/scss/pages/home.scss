@@ -72,6 +72,7 @@
     overflow: hidden;
     color: $gray;
 }
+
 // Keywordsbar
 .d_keywords {
     font-size: 1.25rem;
@@ -81,6 +82,7 @@
         background: $ddd-blue-lighter;
     }
 }
+
 // Interestsbar
 .d_interests {
     font-size: 1.25rem;
@@ -89,6 +91,11 @@
         @extend %before-after-section-as-full-width-background-color;
         background: $ddd-blue-lighter;
     }
+}
+.tag{
+    font-size: 0.7em;
+    line-height: 1.5em;
+    background-color: #11BAE9;
 }
 
 // Skillboard
