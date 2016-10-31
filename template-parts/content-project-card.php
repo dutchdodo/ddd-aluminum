@@ -14,7 +14,7 @@
 				echo 	'<img class="card-img-top img-fluid" src="'.$project_list_item->ddd_featured_image.'" alt="Card image cap">';
 						}
 				echo 	'<div class="card-block">';
-				echo 		'<a href="'.$project_list_item->ddd_url_link.'" alt="link to project" class="fa fa-external-link pull-right"></a>';
+				echo 		'<a target="_blank" href="'.$project_list_item->ddd_url_link.'" alt="link to project" class="fa fa-external-link pull-right"></a>';
 				echo 		'<h4 class="card-title">'.$project_list_item->ddd_the_title.'</h4>';
 				echo 		'<dl class="project-meta">';
 				echo 			'<dt class="project-meta--jobrole">Jobrole</dt>';
