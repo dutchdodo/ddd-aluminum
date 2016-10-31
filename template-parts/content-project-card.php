@@ -14,6 +14,7 @@
 				echo 	'<img class="card-img-top img-fluid" src="'.$project_list_item->ddd_featured_image.'" alt="Card image cap">';
 						}
 				echo 	'<div class="card-block">';
+				echo 		'<a href="'.$project_list_item->ddd_url_link.'" alt="link to project" class="fa fa-external-link pull-right"></a>';
 				echo 		'<h4 class="card-title">'.$project_list_item->ddd_the_title.'</h4>';
 				echo 		'<dl class="project-meta">';
 				echo 			'<dt class="project-meta--jobrole">Jobrole</dt>';
@@ -21,11 +22,11 @@
 				echo 			'<dt class="project-meta--clientname">Client</dt>';
 				echo 			'<dd>'.$project_list_item->ddd_client_name.'</dd>';
 								if( $project_list_item->ddd_url_link ){
-				echo 			'<dt class="project-meta--url" hidden>Link</dt>';
+				//echo 			'<dt class="project-meta--url" hidden>Link</dt>';
 								if( ! $project_list_item->ddd_url_link_text ) {
 									$project_list_item->ddd_url_link_text = 'view online';
 								}
-				echo 			'<dd hidden><a href="'.$project_list_item->ddd_url_link.'" alt="link to project">'.$project_list_item->ddd_url_link_text.'</a></dd>';
+				//echo 			'<dd><a href="'.$project_list_item->ddd_url_link.'" alt="link to project">'.$project_list_item->ddd_url_link_text.'</a></dd>';
 								}
 				echo 		'</dl>';
 
