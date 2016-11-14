@@ -7,7 +7,7 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class('mainarticle'); ?>>
-	<header class="entry-header" <?php if( rwmb_meta('ddd_hide_page_title') ) echo 'hidden'; ?>>
+	<header class="entry-header<?php if( rwmb_meta('ddd_hide_page_title') ) echo ' d_hidden'; ?>">
 		<?php the_title( '<h2 class="entry-title">', '</h2>' ); ?>
 	</header><!-- .entry-header -->
 

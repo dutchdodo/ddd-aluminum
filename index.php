@@ -12,8 +12,7 @@
  */
 
 get_header(); ?>
-	<div class="site-main-wrapper">
-		<main class="site-main">
+		<main>
 
 			<?php if ( have_posts() ) : ?>
 
@@ -36,7 +35,6 @@ get_header(); ?>
 
 			<?php endif; ?>
 
-		</main><!-- #main -->
-	</div>
+		</main>
 
 <?php get_footer(); ?>

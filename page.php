@@ -11,16 +11,15 @@
  */
 
 get_header(); ?>
-	<div class="site-main-wrapper has-a-sidebar">
-		<main class="site-main">
+		<main>
 
 			<?php while ( have_posts() ) : the_post(); ?>
 
 				<?php get_template_part( 'template-parts/content', 'page' ); ?>
 
 			<?php endwhile; // end of the loop. ?>
-		</main><!-- #main -->
-		<sidebar class="sidebar">
+		</main>
+		<sidebar>
 			is is an example page.
 			It’s different from a blog post because
 			it will stay in one place and will show
@@ -28,5 +27,4 @@ get_header(); ?>
 			Most people start with an About page that
 			introduces them to potential site
 		</sidebar>
-	</div>
 <?php get_footer(); ?>

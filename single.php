@@ -6,8 +6,7 @@
  */
 
 get_header(); ?>
-	<div class="site-main-wrapper">
-		<main class="site-main">
+		<main>
 
 		<?php while ( have_posts() ) : the_post(); ?>
 
@@ -15,7 +14,7 @@ get_header(); ?>
 
 		<?php endwhile; // end of the loop. ?>
 
-		</main><!-- #main -->
+		</main>
 	</div>
 
 <?php get_footer(); ?>

@@ -1,7 +1,7 @@
 /*--------------------------------------------------------------
   Card
 --------------------------------------------------------------*/
-
+// BS card
 .card{
     box-shadow: 0px 2px 8px 0px rgba(0,0,0,.15);
     border-radius: 0;
@@ -24,6 +24,7 @@
     }
 }
 
+// Modifier on BS card
 .d_cards--tiled {
     position: relative;
     z-index: 4;

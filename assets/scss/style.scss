@@ -8,6 +8,7 @@
   2.4 Placeholders
 2.0 Vendors
   2.1 Bootstrap
+  2.2 Font-awesome
 3.0 Base
   3.1 Base
   3.2 WP Classes
@@ -44,27 +45,26 @@
 3.0 Base, boilerplate
 --------------------------------------------------------------*/
 //@import "base/base"; // Using Bootstrap reset
-@import "base/wp-classes";
+@import "base/_wp-classes";
 @import "base/_accessibility";
-@import "base/typography";
+@import "base/_typography";
 
 /*--------------------------------------------------------------
 4.0 Layout, main parts of our website
 --------------------------------------------------------------*/
-@import "layout/page";
-@import "layout/forms";
-@import "layout/header";
-@import "layout/content";
-@import "layout/footer";
+@import "layout/_page";
+@import "layout/_forms";
+@import "layout/_header";
+@import "layout/_content";
+@import "layout/_footer";
 
 /*--------------------------------------------------------------
 5.0 Components, small widgets or micro elements
 --------------------------------------------------------------*/
-@import "components/breadcrumbs";
-@import "components/listing";
-@import "components/cards";
-@import "components/d_progressbar";
-@import "components/d_events";
+@import "components/_d_listing";
+@import "components/_d_cards";
+@import "components/_d_progressbar";
+@import "components/_d_events";
 
 /*--------------------------------------------------------------
 6.0 Pages, specific styling for a single page

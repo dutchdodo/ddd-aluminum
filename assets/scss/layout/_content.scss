@@ -1,21 +1,3 @@
 /*--------------------------------------------------------------
   Content
 --------------------------------------------------------------*/
-
-
-// CONTENT
-.mainarticle {
-    //position: relative;
-}
-.sidebar {
-    font-size: 0.9em;
-    display: none;
-    position: absolute;
-    width: 14rem;
-    right: -16rem;
-    margin-left: 3%;
-    top: 0;
-    @include media-breakpoint-up(lg) {
-        display: block;
-    }
-}

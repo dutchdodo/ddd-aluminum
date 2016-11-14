@@ -1,3 +1,8 @@
 /*--------------------------------------------------------------
   Helper classes
 --------------------------------------------------------------*/
+
+// workaround for using BS 'hidden' for maintaining HTML outline
+.d_hidden {
+    display: none;
+}

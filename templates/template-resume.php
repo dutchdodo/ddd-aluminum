@@ -3,7 +3,7 @@
 
 get_header(); ?>
 
-		<main class="site-main">
+		<main>
 
 			<?php while ( have_posts() ) : the_post(); ?>
 				<?php echo '<div class="d_section d_cvcard">' ?>
@@ -67,7 +67,7 @@ get_header(); ?>
 			<?php echo '</div>' ?>
 			<?php echo '</div>' ?>
 
-		</main><!-- #main -->
+		</main>
 
 
 <?php get_footer(); ?>

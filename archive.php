@@ -9,7 +9,7 @@
 
 get_header(); ?>
 
-	<main class="site-main container">
+	<main>
 
 	<?php if ( have_posts() ) : ?>
 
@@ -34,7 +34,7 @@ get_header(); ?>
 
 	<?php endif; ?>
 
-	</main><!-- #main -->
+	</main>
 
 	<?php //get_sidebar(); ?>
 
