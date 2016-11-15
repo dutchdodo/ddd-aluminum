@@ -20,13 +20,13 @@
         'common': {
             init: function() {
                 // JavaScript to be fired on all pages
-                $('.header-sticky-wrapper').headroom({
-					offset: $('.main-navigation').offset().top,
-					tolerance: {
-						up: 20,
-						down: 6
-					}
-				});
+                // $('.d_header-sticky-wrapper').headroom({
+				// 	offset: $('.d_main-navigation').offset().top,
+				// 	tolerance: {
+				// 		up: 20,
+				// 		down: 6
+				// 	}
+				// });
             }
         },
         // Home page
