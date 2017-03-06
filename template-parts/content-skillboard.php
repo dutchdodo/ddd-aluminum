@@ -3,55 +3,19 @@
  * @package dutchdodo startertheme
  */
 ?>
-	<div class="d_home-skillboard__content">
 
-		<div class="d_progressbar">
-			<div class="d_progressbar__label">Photoshop</div>
-			<div class="d_progressbar__scale">
-				<div class="d_progressbar__score"><span hidden>80%</span></div>
-			</div>
-		</div>
 
-		<div class="d_progressbar">
-			<div class="d_progressbar__label">Illustrator</div>
-			<div class="d_progressbar__scale">
-				<div class="d_progressbar__score"><span hidden>70%</span></div>
-			</div>
-		</div>
-
-		<div class="d_progressbar">
-			<div class="d_progressbar__label">Axure</div>
-			<div class="d_progressbar__scale">
-				<div class="d_progressbar__score"><span hidden>70%</span></div>
-			</div>
-		</div>
-
-		<div class="d_progressbar">
-			<div class="d_progressbar__label">HTML &amp; CSS</div>
-			<div class="d_progressbar__scale">
-				<div class="d_progressbar__score"><span hidden>80%</span></div>
-			</div>
-		</div>
-
-		<div class="d_progressbar">
-			<div class="d_progressbar__label">Wordpress</div>
-			<div class="d_progressbar__scale">
-				<div class="d_progressbar__score"><span hidden>75%</span></div>
-			</div>
-		</div>
-
-		<div class="d_progressbar">
-			<div class="d_progressbar__label">jQuery</div>
-			<div class="d_progressbar__scale">
-				<div class="d_progressbar__score"><span hidden>65%</span></div>
-			</div>
-		</div>
-
-		<div class="d_progressbar">
-			<div class="d_progressbar__label">SASS</div>
-			<div class="d_progressbar__scale">
-				<div class="d_progressbar__score"><span hidden>80%</span></div>
-			</div>
-		</div>
-
-	</div>
+<?php
+	if ( $skillboard_list = ddd_get_tools() ) {
+		echo 	'<div class="d_home-skillboard__content">';
+		foreach( $skillboard_list as $skillboard_list_item ) {
+		echo 		'<div class="d_progressbar">';
+		echo 			'<div class="d_progressbar__label">'.$skillboard_list_item->ddd_the_title.'</div>';
+		echo 			'<div class="d_progressbar__scale">';
+		echo 				'<div class="d_progressbar__score"><span hidden>'.$skillboard_list_item->ddd_tools_score.'</span></div>';
+		echo 			'</div>';
+		echo 		'</div>';
+		}
+		echo 	'</div>';
+	}
+?>

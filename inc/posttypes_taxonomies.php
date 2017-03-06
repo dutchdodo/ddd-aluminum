@@ -125,7 +125,7 @@ if( function_exists( 'register_extended_post_type' ) ) {
         register_extended_post_type( 'ddd-tools', array(
 
             # Add the post type to the site's main RSS feed:
-            'show_in_feed' => true,
+            'show_in_feed' => false,
             'supports'     => array( 'title', 'editor', 'page-attributes', 'thumbnail' ),
             'hierarchical' => false,
             'menu_icon'    => 'dashicons-feedback',
@@ -151,6 +151,62 @@ if( function_exists( 'register_extended_post_type' ) ) {
             'singular' => 'Tool',
             'plural'   => 'Tools',
             'slug'     => 'tools'
+
+        ) );
+
+        register_extended_post_type( 'ddd-keywords', array(
+
+            # Add the post type to the site's main RSS feed:
+            'show_in_feed' => false ,
+            'supports'     => array( 'title' ),
+            'hierarchical' => false,
+            'menu_icon'    => 'dashicons-feedback',
+
+            # Show all posts on the post type archive:
+            'archive' => array(
+                'nopaging' => true
+            ),
+            'show_in_rest' => true,
+
+            'labels' => array(
+                'all_items'				=> 'All Keywords',
+                'add_new'				=> 'Add new Keyword',
+                'add_new_item'			=> 'New Keyword',
+            )
+        ), array(
+
+            # Override the base names used for labels:
+            'singular' => 'Keyword',
+            'plural'   => 'Keywords',
+            'slug'     => 'keywords'
+
+        ) );
+
+        register_extended_post_type( 'ddd-interests', array(
+
+            # Add the post type to the site's main RSS feed:
+            'show_in_feed' => false ,
+            'supports'     => array( 'title' ),
+            'hierarchical' => false,
+            'menu_icon'    => 'dashicons-feedback',
+
+            # Show all posts on the post type archive:
+            'archive' => array(
+                'nopaging' => true
+            ),
+            'show_in_rest' => true,
+
+            'labels' => array(
+                'all_items'				=> 'All Interests',
+                'add_new'				=> 'Add new Interest',
+                'add_new_item'			=> 'New Interests',
+            )
+        ), array(
+
+            # Override the base names used for labels:
+            'singular' => 'Interest',
+            'plural'   => 'Interests',
+            'slug'     => 'interests'
 
         ) );
 

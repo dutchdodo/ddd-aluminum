@@ -4,11 +4,10 @@
  */
 ?>
 
-	<span class="tag tag-default">Positive</span>
-	<span class="tag tag-default">Empatic</span>
-	<span class="tag tag-default">KISS</span>
-	<span class="tag tag-default">Analytical</span>
-	<span class="tag tag-default">User Centered Design</span>
-	<span class="tag tag-default">MVP</span>
-	<span class="tag tag-default">Agile</span>
-	<span class="tag tag-default">Teamplayer</span>
+	<?php
+		if ( $keyword_list = ddd_get_keywords() ) {
+			foreach( $keyword_list as $keyword_list_item ) {
+				echo 	'<span class="tag tag-default">'.$keyword_list_item->ddd_the_title.'</span>';
+			}
+		}
+	?>

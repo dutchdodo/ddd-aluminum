@@ -4,9 +4,10 @@
  */
 ?>
 
-	<span class="tag tag-default">Movies</span>
-	<span class="tag tag-default">Documentary</span>
-	<span class="tag tag-default">Food</span>
-	<span class="tag tag-default">Running</span>
-	<span class="tag tag-default">Freeletics</span>
-	<span class="tag tag-default">Music</span>
+	<?php
+		if ( $interests_list = ddd_get_interests() ) {
+			foreach( $interests_list as $interests_list_item ) {
+				echo 	'<span class="tag tag-default">'.$interests_list_item->ddd_the_title.'</span>';
+			}
+		}
+	?>

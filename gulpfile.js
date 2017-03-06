@@ -61,8 +61,9 @@ gulp.task('compile-styles', function () {
         browsers: ['last 2 versions'],
         cascade: false
     }))
-    .pipe(cleanCSS())
-    .pipe(sourcemaps.write('.'))
+    //.pipe(cleanCSS())
+    //.pipe(sourcemaps.write('.'))
+    .pipe(uncss({ html: ['http://ddd.marcel.dev/'] }))
     .pipe(gulp.dest(distPath + '/css'))
     .pipe(browserSync.stream())
   );

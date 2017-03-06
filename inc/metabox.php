@@ -227,8 +227,43 @@ function ddd_action_register_metaboxes () {
 			)
 		);
 
-
-
+		// Settings for all post & page & other custompost-types
+		$meta_boxes[] = array(
+			// Meta box id, UNIQUE per meta box. Optional since 4.1.5
+			'id'         => 'post_meta',
+			// Meta box title - Will appear at the drag and drop handle bar. Required.
+			'title'      => __( 'Tools meta', 'ddd' ),
+			// Post types, accept custom post types as well - DEFAULT is 'post'. Can be array (multiple post types) or string (1 post type). Optional.
+			'post_types' => array( 'ddd-tools' ),
+			// Where the meta box appear: normal (default), advanced, side. Optional.
+			'context'    => 'normal',
+			// Order of meta box: high (default), low. Optional.
+			'priority'   => 'high',
+			// Auto save: true, false (default). Optional.
+			'autosave'   => false,
+			// List of meta fields
+			'fields'     => array(
+				array(
+					// Field name - Will be used as label
+					'name'  => __( 'Tool score', 'ddd' ),
+					// Field ID, i.e. the meta key
+					'id'    => "{$prefix}tools_score",
+					// Field description (optional)
+					'type'  => 'slider',
+					// Text labels displayed before and after value
+					'prefix' => __( '', 'your-prefix' ),
+					'suffix' => __( ' Skillpoints', 'your-prefix' ),
+					// jQuery UI slider options. See here http://api.jqueryui.com/slider/
+					'js_options' => array(
+						'min'   => 0,
+						'max'   => 100,
+						'step'  => 10,
+					),
+					'std' => 10,
+					// 'clone' => true,
+				),
+			)
+		);
 		foreach ( $meta_boxes as $meta_box ) {
 
 			//Make sure the Meta_Box plugin is active.

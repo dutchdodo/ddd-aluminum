@@ -19,7 +19,7 @@ This setup is tested on Node 5.0 and 3.3.6
 
 ## Developing
 To start developing you can run gulp or if you want realtime sync with all of your browsers run grunt dev-sync
-When pushing code to the live enviorment run grunt release first it will autoprefix your css aswell concat and uglify your JS files
+When pushing code to the live environment run grunt release first it will auto-prefix your css as well concat and uglify your JS files
 
 ### Adding packages with bower
 To install additional front-end packages use bower install. Full list of bower packages see the website http://www.bower.io .
